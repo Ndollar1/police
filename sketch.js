@@ -1,0 +1,1387 @@
+var myData;
+var sunday, monday, tuesday, wednesday, thursday, friday, saturday;
+var one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, zero;
+var sunday2, monday2, tuesday2, wednesday2, thursday2, friday2, saturday2;
+var one2, two2, three2, four2, five2, six2, seven2, eight2, nine2, ten2, eleven2, twelve2, thirteen2, fourteen2, fifteen2, sixteen2, seventeen2, eighteen2, nineteen2, twenty2, twentyone2, twentytwo2, twentythree2, zero2;
+var pg1, pg0, pg2, pg1Su, pg1Mo, pg1Tu, pg1We, pg1Th, pg1Fr, pg1Sa, pg1CNC;
+var badge;
+var sundayA, mondayA, tuesdayA, wenesdayA, thursdayA, fridayA, saturdayA;
+var sundayNC, sundayC, mondayNC, mondayC, tuesdayNC, tuesdayC, wednesdayNC, wednesdayC, thursdayNC, thursdayC, fridayNC, fridayC, saturdayNC, saturdayC;
+var count;
+
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  loadJSON("https://data.sfgov.org/resource/nwbb-fxkq.json", gotData);
+  textFont(loadFont("Kanit-Regular.ttf"));
+  badge = loadImage("badge-01.png");
+  one = 0;
+  two = 0;
+  three = 0;
+  four = 0;
+  five = 0;
+  six = 0;
+  seven = 0;
+  eight = 0;
+  nine = 0;
+  ten = 0;
+  eleven = 0;
+  twelve = 0;
+  thirteen = 0;
+  fourteen = 0;
+  fifteen = 0;
+  sixteen = 0;
+  seventeen = 0;
+  eighteen = 0;
+  nineteen = 0;
+  twenty = 0;
+  twentyone = 0;
+  twentytwo = 0;
+  twentythree = 0;
+  zero = 0;
+  one2 = 0;
+  two2 = 0;
+  three2 = 0;
+  four2 = 0;
+  five2 = 0;
+  six2 = 0;
+  seven2 = 0;
+  eight2 = 0;
+  nine2 = 0;
+  ten2 = 0;
+  eleven2 = 0;
+  twelve2 = 0;
+  thirteen2 = 0;
+  fourteen2 = 0;
+  fifteen2 = 0;
+  sixteen2 = 0;
+  seventeen2 = 0;
+  eighteen2 = 0;
+  nineteen2 = 0;
+  twenty2 = 0;
+  twentyone2 = 0;
+  twentytwo2 = 0;
+  twentythree2 = 0;
+  zero2 = 0;
+  sunday = 0;
+  monday = 0;
+  tuesday = 0;
+  wednesday = 0;
+  thursday = 0;
+  friday = 0;
+  saturday = 0;
+  sunday2 = 0;
+  monday2 = 0;
+  tuesday2 = 0;
+  wednesday2 = 0;
+  thursday2 = 0;
+  friday2 = 0;
+  saturday2 = 0;
+  sundayC = 0;
+  mondayC = 0;
+  tuesdayC = 0;
+  wednesdayC = 0;
+  thursdayC = 0;
+  fridayC = 0;
+  saturdayC = 0;
+  sundayNC = 0;
+  mondayNC = 0;
+  tuesdayNC = 0;
+  wednesdayNC = 0;
+  thursdayNC = 0;
+  fridayNC = 0;
+  saturdayNC = 0;
+
+  count = 30;
+
+  sundayA = 650;
+  mondayA = 650;
+  tuesdayA = 650;
+  wednesdayA = 650;
+  thursdayA = 650;
+  fridayA = 650;
+  saturdayA = 650;
+
+  pg1 = false;
+  pg1Su = false;
+  pg0 = true;
+  pg2 = false;
+  pg1Mo = false;
+  pg1Tu = false;
+  pg1We = false;
+  pg1Th = false;
+  pg1Fr = false;
+  pg1Sa = false;
+  pg1CNC = false;
+}
+
+function gotData(data) {
+  myData = data;
+  //text(myData[2].incident_day_of_week,250,250);
+  for (var i = 0; i < myData.length; i++) {
+    if (myData[i].incident_day_of_week == "Monday") {
+      monday++;
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        mondayC++;
+      } else {
+        mondayNC++;
+      }
+
+    }
+    if (myData[i].incident_day_of_week == "Tuesday") {
+      tuesday++;
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        tuesdayC++;
+      } else {
+        tuesdayNC++;
+      }
+    }
+    if (myData[i].incident_day_of_week == "Wednesday") {
+      wednesday++;
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        wednesdayC++;
+      } else {
+        wednesdayNC++;
+      }
+    }
+    if (myData[i].incident_day_of_week == "Thursday") {
+      thursday++;
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        thursdayC++;
+      } else {
+        thursdayNC++;
+      }
+    }
+    if (myData[i].incident_day_of_week == "Friday") {
+      friday++;
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        fridayC++;
+      } else {
+        fridayNC++;
+      }
+    }
+    if (myData[i].incident_day_of_week == "Saturday") {
+      saturday++;
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        saturdayC++;
+      } else {
+        saturdayNC++;
+      }
+    }
+    if (myData[i].incident_day_of_week == "Sunday") {
+      sunday++;
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        sundayC++;
+      } else {
+        sundayNC++;
+      }
+    }
+  }
+  for (var i = 0; i < myData.length; i++) {
+    if (split(myData[i].incident_time, ":")[0] == "00")
+      zero++;
+    if (split(myData[i].incident_time, ":")[0] == "01")
+      one++;
+    if (split(myData[i].incident_time, ":")[0] == "02")
+      two++;
+    if (split(myData[i].incident_time, ":")[0] == "03")
+      three++;
+    if (split(myData[i].incident_time, ":")[0] == "04")
+      four++;
+    if (split(myData[i].incident_time, ":")[0] == "05")
+      five++;
+    if (split(myData[i].incident_time, ":")[0] == "06")
+      six++;
+    if (split(myData[i].incident_time, ":")[0] == "07")
+      seven++;
+    if (split(myData[i].incident_time, ":")[0] == "08")
+      eight++;
+    if (split(myData[i].incident_time, ":")[0] == "09")
+      nine++;
+    if (split(myData[i].incident_time, ":")[0] == "10")
+      ten++;
+    if (split(myData[i].incident_time, ":")[0] == "11")
+      eleven++;
+    if (split(myData[i].incident_time, ":")[0] == "12")
+      twelve++;
+    if (split(myData[i].incident_time, ":")[0] == "13")
+      thirteen++;
+    if (split(myData[i].incident_time, ":")[0] == "14")
+      fourteen++;
+    if (split(myData[i].incident_time, ":")[0] == "15")
+      fifteen++;
+    if (split(myData[i].incident_time, ":")[0] == "16")
+      sixteen++;
+    if (split(myData[i].incident_time, ":")[0] == "17")
+      seventeen++;
+    if (split(myData[i].incident_time, ":")[0] == "18")
+      eighteen++;
+    if (split(myData[i].incident_time, ":")[0] == "19")
+      nineteen++;
+    if (split(myData[i].incident_time, ":")[0] == "20")
+      twenty++;
+    if (split(myData[i].incident_time, ":")[0] == "21")
+      twentyone++;
+    if (split(myData[i].incident_time, ":")[0] == "22")
+      twentytwo++;
+    if (split(myData[i].incident_time, ":")[0] == "23")
+      twentythree++;
+  }
+  //  rect(50,50,sunday,50);
+  //  text(sunday, 50,50); text("sunday",100,50);
+  //  text(monday, 50,150);text("monday",100,150);
+  //  text(tuesday, 50,250);text("tuesday",100,250);
+  //  text(wednesday, 50,350);text("wednesday",100,350);
+  //  text(thursday, 50,450);text("thursday",100,450);
+  //  text(friday, 50,550);text("friday",100,550);
+  //  text(saturday, 50,650);text("saturday",100,650);
+}
+
+function resetValues() {
+  sunday2 = 0;
+  monday2 = 0;
+  tuesday2 = 0;
+  wednesday2 = 0;
+  thursday2 = 0;
+  friday2 = 0;
+  saturday2 = 0;
+
+  one2 = 0;
+  two2 = 0;
+  three2 = 0;
+  four2 = 0;
+  five2 = 0;
+  six2 = 0;
+  seven2 = 0;
+  eight2 = 0;
+  nine2 = 0;
+  ten2 = 0;
+  eleven2 = 0;
+  twelve2 = 0;
+  thirteen2 = 0;
+  fourteen2 = 0;
+  fifteen2 = 0;
+  sixteen2 = 0;
+  seventeen2 = 0;
+  eighteen2 = 0;
+  nineteen2 = 0;
+  twenty2 = 0;
+  twentyone2 = 0;
+  twentytwo2 = 0;
+  twentythree2 = 0;
+  zero2 = 0;
+
+  count = 30;
+
+  sundayA = 650;
+  mondayA = 650;
+  tuesdayA = 650;
+  wednesdayA = 650;
+  thursdayA = 650;
+  fridayA = 650;
+  saturdayA = 650;
+}
+
+function draw() {
+  if (myData) {
+    if (pg0) {
+
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      textSize(60);
+      text("SFPD Incident Reports: 2018", 125, 150);
+      textSize(30);
+      fill(255);
+      rect(150, 300, 200, 50);
+      rect(700, 300, 200, 50);
+      fill(0);
+      text("Day of Week", 715, 335);
+      text("Time of Day", 165, 335);
+      if (mouseIsPressed && mouseX >= 700 && mouseX <= 1000 && mouseY >= 300 && mouseY <= 350) {
+        resetValues();
+        pg0 = false;
+        pg1 = true;
+      }
+      if (mouseIsPressed && mouseX >= 150 && mouseX <= 450 && mouseY >= 300 && mouseY <= 350) {
+        resetValues();
+        pg0 = false;
+        pg2 = true;
+      }
+
+    }
+    if (pg1) {
+      background(98, 101, 127);
+      count++;
+      image(badge, 275, 0);
+      if (sunday2 < sunday)
+        sunday2++;
+      if (saturday2 < saturday)
+        saturday2++;
+      if (monday2 < monday)
+        monday2++;
+      if (tuesday2 < tuesday)
+        tuesday2++;
+      if (wednesday2 < wednesday)
+        wednesday2++;
+      if (thursday2 < thursday)
+        thursday2++;
+      if (friday2 < friday)
+        friday2++;
+      noStroke();
+      textSize(24);
+      fill(sunday2, sunday2 / 4, sunday2 / 4);
+      rect(150, 650, 50, -sunday2 * 2);
+      text(sunday2, 155, 650 - sunday2 * 2);
+      fill(monday2, monday2 / 4, monday2 / 4);
+      rect(250, 650, 50, -monday2 * 2);
+      text(monday2, 255, 650 - monday2 * 2);
+      fill(tuesday2, tuesday2 / 4, tuesday2 / 4);
+      rect(350, 650, 50, -tuesday2 * 2);
+      text(tuesday2, 355, 650 - tuesday2 * 2);
+      fill(wednesday2, wednesday2 / 4, wednesday2 / 4);
+      rect(450, 650, 50, -wednesday2 * 2);
+      text(wednesday2, 455, 650 - wednesday2 * 2);
+      fill(thursday2, thursday2 / 4, thursday2 / 4);
+      rect(550, 650, 50, -thursday2 * 2);
+      text(thursday2, 555, 650 - thursday2 * 2);
+      fill(friday2, friday2 / 4, friday2 / 4);
+      rect(650, 650, 50, -friday2 * 2);
+      text(friday2, 655, 650 - friday2 * 2);
+      fill(saturday2, saturday2 / 4, saturday2 / 4);
+      rect(750, 650, 50, -saturday2 * 2);
+      text(saturday2, 755, 650 - saturday2 * 2);
+
+      fill(0);
+      ellipse(175, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Su", 152, 665);
+      fill(0);
+      ellipse(275, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Mo", 252, 665);
+      fill(0);
+      ellipse(375, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Tu", 352, 665);
+      fill(0);
+      ellipse(475, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("We", 448, 665);
+      fill(0);
+      ellipse(575, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Th", 552, 665);
+      fill(0);
+      ellipse(675, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Fr", 652, 665);
+      fill(0);
+      ellipse(775, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Sa", 752, 665);
+      ellipse(60, 60, 100, 100);
+      fill(0);
+      textSize(40);
+      text("Day of the week", 300, 750);
+      push();
+      translate(100, 500);
+      rotate(radians(-90));
+      text("# of incidents", 0, 0);
+      pop();
+      fill(255);
+      rect(50, 725, 200, 50);
+      rect(700, 725, 400, 50);
+      fill(0);
+      text("Total", 70, 760);
+      text("Violent/Non-Violent", 710, 760);
+      if (mouseIsPressed && mouseX >= 50 && mouseX <= 250 && mouseY >= 725 && mouseY <= 775) {
+        pg1 = false;
+        pg1 = true;
+      }
+      if (mouseIsPressed && mouseX >= 700 && mouseX <= 1100 && mouseY >= 725 && mouseY <= 775 && count >= 300) {
+        pg1 = false;
+        pg1CNC = true;
+      }
+      if (mouseIsPressed && mouseX >= 137 && mouseX <= 212 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1 = false;
+        pg1Su = true;
+      }
+      if (mouseIsPressed && mouseX >= 237 && mouseX <= 312 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1 = false;
+        pg1Mo = true;
+      }
+      if (mouseIsPressed && mouseX >= 337 && mouseX <= 412 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1 = false;
+        pg1Tu = true;
+      }
+      if (mouseIsPressed && mouseX >= 437 && mouseX <= 512 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1 = false;
+        pg1We = true;
+      }
+      if (mouseIsPressed && mouseX >= 537 && mouseX <= 612 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1 = false;
+        pg1Th = true;
+      }
+      if (mouseIsPressed && mouseX >= 637 && mouseX <= 712 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1 = false;
+        pg1Fr = true;
+      }
+      if (mouseIsPressed && mouseX >= 737 && mouseX <= 812 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1 = false;
+        pg1Sa = true;
+      }
+      if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
+        resetValues();
+        pg1 = false;
+        pg0 = true;
+      }
+    }
+    if (pg1CNC) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      if (sunday2 < sunday)
+        sunday2++;
+      if (saturday2 < saturday)
+        saturday2++;
+      if (monday2 < monday)
+        monday2++;
+      if (tuesday2 < tuesday)
+        tuesday2++;
+      if (wednesday2 < wednesday)
+        wednesday2++;
+      if (thursday2 < thursday)
+        thursday2++;
+      if (friday2 < friday)
+        friday2++;
+      noStroke();
+      textSize(24);
+
+      fill(sunday2, sunday2 / 4, sunday2 / 4);
+      rect(150, 650, 50, (-sundayC * 2) - sundayNC * 2);
+      fill(sunday2 / 4, sunday2 / 4, sunday2);
+      rect(150, 650, 50, -sundayNC * 2);
+      fill(150, 150, 255);
+      text(sundayNC, 155, 675 - sunday2 * 2 + (sundayC * 2));
+      fill(sunday2, sunday2 / 4, sunday2 / 4);
+      text(sundayC, 155, 650 - sunday2 * 2);
+
+
+      fill(monday2, monday2 / 4, monday2 / 4);
+      rect(250, 650, 50, (-mondayC * 2) - mondayNC * 2);
+      fill(monday2 / 4, monday2 / 4, monday2);
+      rect(250, 650, 50, -mondayNC * 2);
+      fill(monday2, monday2 / 4, monday2 / 4);
+      text(mondayC, 255, 650 - monday2 * 2);
+      fill(150, 150, 255);
+      text(mondayNC, 255, 675 - monday2 * 2 + (mondayC * 2));
+
+
+      fill(tuesday2, tuesday2 / 4, tuesday2 / 4);
+      rect(350, 650, 50, (-tuesdayC * 2) - tuesdayNC * 2);
+      fill(tuesday2 / 4, tuesday2 / 4, tuesday2);
+      rect(350, 650, 50, -tuesdayNC * 2);
+      fill(tuesday2, tuesday2 / 4, tuesday2 / 4);
+      text(tuesdayC, 355, 650 - tuesday2 * 2);
+      fill(150, 150, 255);
+      text(tuesdayNC, 355, 675 - tuesday2 * 2 + (tuesdayC * 2));
+
+
+      fill(wednesday2, wednesday2 / 4, wednesday2 / 4);
+      rect(450, 650, 50, (-wednesdayC * 2) - wednesdayNC * 2);
+      fill(wednesday2 / 4, wednesday2 / 4, wednesday2);
+      rect(450, 650, 50, -wednesdayNC * 2);
+      fill(wednesday2, wednesday2 / 4, wednesday2 / 4);
+      text(wednesdayC, 455, 650 - wednesday2 * 2);
+      fill(150, 150, 255);
+      text(wednesdayNC, 455, 675 - wednesday2 * 2 + (wednesdayC * 2));
+
+
+      fill(thursday2, thursday2 / 4, thursday2 / 4);
+      rect(550, 650, 50, (-thursdayC * 2) - thursdayNC * 2);
+      fill(thursday2 / 4, thursday2 / 4, thursday2);
+      rect(550, 650, 50, -thursdayNC * 2);
+
+      fill(thursday2, thursday2 / 4, thursday2 / 4);
+      text(thursdayC, 555, 650 - thursday2 * 2);
+      fill(150, 150, 255);
+      text(thursdayNC, 555, 675 - thursday2 * 2 + (thursdayC * 2));
+
+
+      fill(friday2, friday2 / 4, friday2 / 4);
+      rect(650, 650, 50, (-fridayC * 2) - fridayNC * 2);
+      fill(friday2 / 4, friday2 / 4, friday2);
+      rect(650, 650, 50, -fridayNC * 2);
+      fill(friday2, friday2 / 4, friday2 / 4);
+      text(fridayC, 655, 650 - friday2 * 2);
+      fill(150, 150, 255);
+      text(fridayNC, 655, 675 - friday2 * 2 + (fridayC * 2));
+
+      fill(saturday2, saturday2 / 4, saturday2 / 4);
+      rect(750, 650, 50, (-saturdayC * 2)-saturdayNC*2);
+      fill(saturday2/4, saturday2 / 4, saturday2);
+      rect(750, 650, 50, -saturdayNC * 2);
+
+fill(saturday2, saturday2 / 4, saturday2 / 4);
+      text(saturdayC, 755, 650 - saturday2 * 2);
+      fill(150, 150, 255);
+      text(saturdayNC, 755, 675 - saturday2 * 2+(saturdayC*2));
+
+      fill(0);
+      ellipse(175, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Su", 152, 665);
+      fill(0);
+      ellipse(275, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Mo", 252, 665);
+      fill(0);
+      ellipse(375, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Tu", 352, 665);
+      fill(0);
+      ellipse(475, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("We", 448, 665);
+      fill(0);
+      ellipse(575, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Th", 552, 665);
+      fill(0);
+      ellipse(675, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Fr", 652, 665);
+      fill(0);
+      ellipse(775, 650, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Sa", 752, 665);
+      ellipse(60, 60, 100, 100);
+      fill(0);
+      textSize(40);
+      text("Day of the week", 300, 750);
+      push();
+      translate(100, 500);
+      rotate(radians(-90));
+      text("# of incidents", 0, 0);
+      pop();
+      fill(255);
+      rect(50, 725, 200, 50);
+      rect(700, 725, 400, 50);
+      fill(0);
+      text("Total", 70, 760);
+      text("Violent/Non-Violent", 710, 760);
+      if (mouseIsPressed && mouseX >= 50 && mouseX <= 250 && mouseY >= 725 && mouseY <= 775) {
+        pg1CNC = false;
+        pg1 = true;
+      }
+      // if (mouseIsPressed && mouseX >= 700 && mouseX <= 1100 && mouseY >= 725 && mouseY <= 775) {
+      //   pg1CNC = false;
+      //   pg1CNC = true;
+      // }
+      if (mouseIsPressed && mouseX >= 137 && mouseX <= 212 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1CNC = false;
+        pg1Su = true;
+      }
+      if (mouseIsPressed && mouseX >= 237 && mouseX <= 312 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1CNC = false;
+        pg1Mo = true;
+      }
+      if (mouseIsPressed && mouseX >= 337 && mouseX <= 412 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1CNC = false;
+        pg1Tu = true;
+      }
+      if (mouseIsPressed && mouseX >= 437 && mouseX <= 512 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1CNC = false;
+        pg1We = true;
+      }
+      if (mouseIsPressed && mouseX >= 537 && mouseX <= 612 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1CNC = false;
+        pg1Th = true;
+      }
+      if (mouseIsPressed && mouseX >= 637 && mouseX <= 712 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1CNC = false;
+        pg1Fr = true;
+      }
+      if (mouseIsPressed && mouseX >= 737 && mouseX <= 812 && mouseY >= 613 && mouseY <= 688) {
+
+        resetValues();
+        pg1CNC = false;
+        pg1Sa = true;
+      }
+      if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
+
+        resetValues();
+        pg1CNC = false;
+        pg0 = true;
+      }
+    }
+
+    if (pg1Su) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      noStroke();
+
+      fill(0);
+      ellipse(175, sundayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Su", 152, sundayA + 15);
+      fill(150);
+      ellipse(275, mondayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Mo", 252, mondayA + 15);
+      fill(150);
+      ellipse(375, tuesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Tu", 352, tuesdayA + 15);
+      fill(150);
+      ellipse(475, wednesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("We", 448, wednesdayA + 15);
+      fill(150);
+      ellipse(575, thursdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Th", 552, thursdayA + 15);
+      fill(150);
+      ellipse(675, fridayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Fr", 652, fridayA + 15);
+      fill(150);
+      ellipse(775, saturdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Sa", 752, saturdayA + 15);
+      if (sundayA >= 150)
+        sundayA -= 10;
+      if (mondayA >= 50 && count > 45)
+        mondayA -= 10;
+      if (tuesdayA >= 50 && count > 60)
+        tuesdayA -= 10;
+      if (wednesdayA >= 50 && count > 75)
+        wednesdayA -= 10;
+      if (thursdayA >= 50 && count > 90)
+        thursdayA -= 10;
+      if (fridayA >= 50 && count > 105)
+        fridayA -= 10;
+      if (saturdayA >= 50 && count > 120)
+        saturdayA -= 10;
+      count++;
+      //  ellipse(60, 60, 100, 100);
+      //   if(mouseIsPressed){
+      //   text(mouseX, 600,600);
+      //   text(mouseY, 600,700);
+      // }
+      if (mouseIsPressed && mouseX >= 137 && mouseX <= 212 && mouseY >= 100 && mouseY <= 175) {
+        resetValues();
+        pg1Su = false;
+        pg1 = true;
+      }
+    }
+    if (pg1Mo) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      noStroke();
+
+      fill(150);
+      ellipse(175, sundayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Su", 152, sundayA + 15);
+      fill(0);
+      ellipse(275, mondayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Mo", 252, mondayA + 15);
+      fill(150);
+      ellipse(375, tuesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Tu", 352, tuesdayA + 15);
+      fill(150);
+      ellipse(475, wednesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("We", 448, wednesdayA + 15);
+      fill(150);
+      ellipse(575, thursdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Th", 552, thursdayA + 15);
+      fill(150);
+      ellipse(675, fridayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Fr", 652, fridayA + 15);
+      fill(150);
+      ellipse(775, saturdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Sa", 752, saturdayA + 15);
+      if (sundayA >= 50 && count > 45)
+        sundayA -= 10;
+      if (mondayA >= 150)
+        mondayA -= 10;
+      if (tuesdayA >= 50 && count > 45)
+        tuesdayA -= 10;
+      if (wednesdayA >= 50 && count > 60)
+        wednesdayA -= 10;
+      if (thursdayA >= 50 && count > 75)
+        thursdayA -= 10;
+      if (fridayA >= 50 && count > 90)
+        fridayA -= 10;
+      if (saturdayA >= 50 && count > 105)
+        saturdayA -= 10;
+      count++;
+      //  ellipse(60, 60, 100, 100);
+      //   if(mouseIsPressed){
+      //   text(mouseX, 600,600);
+      //   text(mouseY, 600,700);
+      // }
+      if (mouseIsPressed && mouseX >= 237 && mouseX <= 312 && mouseY >= 100 && mouseY <= 175) {
+        resetValues();
+        pg1Mo = false;
+        pg1 = true;
+      }
+    }
+    if (pg1Tu) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      noStroke();
+
+      fill(150);
+      ellipse(175, sundayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Su", 152, sundayA + 15);
+      fill(150);
+      ellipse(275, mondayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Mo", 252, mondayA + 15);
+      fill(0);
+      ellipse(375, tuesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Tu", 352, tuesdayA + 15);
+      fill(150);
+      ellipse(475, wednesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("We", 448, wednesdayA + 15);
+      fill(150);
+      ellipse(575, thursdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Th", 552, thursdayA + 15);
+      fill(150);
+      ellipse(675, fridayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Fr", 652, fridayA + 15);
+      fill(150);
+      ellipse(775, saturdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Sa", 752, saturdayA + 15);
+      if (sundayA >= 50 && count > 60)
+        sundayA -= 10;
+      if (mondayA >= 50 && count > 45)
+        mondayA -= 10;
+      if (tuesdayA >= 150)
+        tuesdayA -= 10;
+      if (wednesdayA >= 50 && count > 45)
+        wednesdayA -= 10;
+      if (thursdayA >= 50 && count > 60)
+        thursdayA -= 10;
+      if (fridayA >= 50 && count > 75)
+        fridayA -= 10;
+      if (saturdayA >= 50 && count > 90)
+        saturdayA -= 10;
+      count++;
+      //  ellipse(60, 60, 100, 100);
+      //   if(mouseIsPressed){
+      //   text(mouseX, 600,600);
+      //   text(mouseY, 600,700);
+      // }
+      if (mouseIsPressed && mouseX >= 337 && mouseX <= 412 && mouseY >= 100 && mouseY <= 175) {
+        resetValues();
+        pg1Tu = false;
+        pg1 = true;
+      }
+    }
+    if (pg1We) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      noStroke();
+
+      fill(150);
+      ellipse(175, sundayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Su", 152, sundayA + 15);
+      fill(150);
+      ellipse(275, mondayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Mo", 252, mondayA + 15);
+      fill(150);
+      ellipse(375, tuesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Tu", 352, tuesdayA + 15);
+      fill(0);
+      ellipse(475, wednesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("We", 448, wednesdayA + 15);
+      fill(150);
+      ellipse(575, thursdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Th", 552, thursdayA + 15);
+      fill(150);
+      ellipse(675, fridayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Fr", 652, fridayA + 15);
+      fill(150);
+      ellipse(775, saturdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Sa", 752, saturdayA + 15);
+      if (sundayA >= 50 && count > 75)
+        sundayA -= 10;
+      if (mondayA >= 50 && count > 60)
+        mondayA -= 10;
+      if (tuesdayA >= 50 && count > 45)
+        tuesdayA -= 10;
+      if (wednesdayA >= 150)
+        wednesdayA -= 10;
+      if (thursdayA >= 50 && count > 45)
+        thursdayA -= 10;
+      if (fridayA >= 50 && count > 60)
+        fridayA -= 10;
+      if (saturdayA >= 50 && count > 75)
+        saturdayA -= 10;
+      count++;
+      //  ellipse(60, 60, 100, 100);
+      //   if(mouseIsPressed){
+      //   text(mouseX, 600,600);
+      //   text(mouseY, 600,700);
+      // }
+      if (mouseIsPressed && mouseX >= 437 && mouseX <= 512 && mouseY >= 100 && mouseY <= 175) {
+        resetValues();
+        pg1We = false;
+        pg1 = true;
+      }
+    }
+    if (pg1Th) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      noStroke();
+
+      fill(150);
+      ellipse(175, sundayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Su", 152, sundayA + 15);
+      fill(150);
+      ellipse(275, mondayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Mo", 252, mondayA + 15);
+      fill(150);
+      ellipse(375, tuesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Tu", 352, tuesdayA + 15);
+      fill(150);
+      ellipse(475, wednesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("We", 448, wednesdayA + 15);
+      fill(0);
+      ellipse(575, thursdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Th", 552, thursdayA + 15);
+      fill(150);
+      ellipse(675, fridayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Fr", 652, fridayA + 15);
+      fill(150);
+      ellipse(775, saturdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Sa", 752, saturdayA + 15);
+      if (sundayA >= 50 && count > 90)
+        sundayA -= 10;
+      if (mondayA >= 50 && count > 75)
+        mondayA -= 10;
+      if (tuesdayA >= 50 && count > 60)
+        tuesdayA -= 10;
+      if (wednesdayA >= 50 && count > 45)
+        wednesdayA -= 10;
+      if (thursdayA >= 150)
+        thursdayA -= 10;
+      if (fridayA >= 50 && count > 45)
+        fridayA -= 10;
+      if (saturdayA >= 50 && count > 60)
+        saturdayA -= 10;
+      count++;
+      //  ellipse(60, 60, 100, 100);
+      //   if(mouseIsPressed){
+      //   text(mouseX, 600,600);
+      //   text(mouseY, 600,700);
+      // }
+      if (mouseIsPressed && mouseX >= 537 && mouseX <= 612 && mouseY >= 100 && mouseY <= 175) {
+        resetValues();
+        pg1Th = false;
+        pg1 = true;
+      }
+    }
+    if (pg1Fr) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      noStroke();
+
+      fill(150);
+      ellipse(175, sundayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Su", 152, sundayA + 15);
+      fill(150);
+      ellipse(275, mondayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Mo", 252, mondayA + 15);
+      fill(150);
+      ellipse(375, tuesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Tu", 352, tuesdayA + 15);
+      fill(150);
+      ellipse(475, wednesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("We", 448, wednesdayA + 15);
+      fill(150);
+      ellipse(575, thursdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Th", 552, thursdayA + 15);
+      fill(0);
+      ellipse(675, fridayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Fr", 652, fridayA + 15);
+      fill(150);
+      ellipse(775, saturdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Sa", 752, saturdayA + 15);
+      if (sundayA >= 50 && count > 105)
+        sundayA -= 10;
+      if (mondayA >= 50 && count > 90)
+        mondayA -= 10;
+      if (tuesdayA >= 50 && count > 75)
+        tuesdayA -= 10;
+      if (wednesdayA >= 50 && count > 60)
+        wednesdayA -= 10;
+      if (thursdayA >= 50 && count > 45)
+        thursdayA -= 10;
+      if (fridayA >= 150)
+        fridayA -= 10;
+      if (saturdayA >= 50 && count > 45)
+        saturdayA -= 10;
+      count++;
+      //  ellipse(60, 60, 100, 100);
+      //   if(mouseIsPressed){
+      //   text(mouseX, 600,600);
+      //   text(mouseY, 600,700);
+      // }
+      if (mouseIsPressed && mouseX >= 637 && mouseX <= 712 && mouseY >= 100 && mouseY <= 175) {
+        resetValues();
+        pg1Fr = false;
+        pg1 = true;
+      }
+    }
+    if (pg1Sa) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      noStroke();
+
+      fill(150);
+      ellipse(175, sundayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Su", 152, sundayA + 15);
+      fill(150);
+      ellipse(275, mondayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Mo", 252, mondayA + 15);
+      fill(150);
+      ellipse(375, tuesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Tu", 352, tuesdayA + 15);
+      fill(150);
+      ellipse(475, wednesdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("We", 448, wednesdayA + 15);
+      fill(150);
+      ellipse(575, thursdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Th", 552, thursdayA + 15);
+      fill(150);
+      ellipse(675, fridayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Fr", 652, fridayA + 15);
+      fill(0);
+      ellipse(775, saturdayA, 75, 75);
+      fill(255);
+      textSize(40);
+      text("Sa", 752, saturdayA + 15);
+      if (sundayA >= 50 && count > 120)
+        sundayA -= 10;
+      if (mondayA >= 50 && count > 105)
+        mondayA -= 10;
+      if (tuesdayA >= 50 && count > 90)
+        tuesdayA -= 10;
+      if (wednesdayA >= 50 && count > 75)
+        wednesdayA -= 10;
+      if (thursdayA >= 50 && count > 60)
+        thursdayA -= 10;
+      if (fridayA >= 50 && count > 45)
+        fridayA -= 10;
+      if (saturdayA >= 150)
+        saturdayA -= 10;
+      count++;
+      //  ellipse(60, 60, 100, 100);
+      //   if(mouseIsPressed){
+      //   text(mouseX, 600,600);
+      //   text(mouseY, 600,700);
+      // }
+      if (mouseIsPressed && mouseX >= 737 && mouseX <= 812 && mouseY >= 100 && mouseY <= 175) {
+        resetValues();
+        pg1Sa = false;
+        pg1 = true;
+      }
+    }
+
+    if (pg2) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      if (zero2 < zero)
+        zero2++;
+      if (one2 < one)
+        one2++;
+      if (two2 < two)
+        two2++;
+      if (three2 < three)
+        three2++;
+      if (four2 < four)
+        four2++;
+      if (five2 < five)
+        five2++;
+      if (six2 < six)
+        six2++;
+      if (seven2 < seven)
+        seven2++;
+      if (eight2 < eight)
+        eight2++;
+      if (nine2 < nine)
+        nine2++;
+      if (ten2 < ten)
+        ten2++;
+      if (eleven2 < eleven)
+        eleven2++;
+      if (twelve2 < twelve)
+        twelve2++;
+      if (thirteen2 < thirteen)
+        thirteen2++;
+      if (fourteen2 < fourteen)
+        fourteen2++;
+      if (fifteen2 < fifteen)
+        fifteen2++;
+      if (sixteen2 < sixteen)
+        sixteen2++;
+      if (seventeen2 < seventeen)
+        seventeen2++;
+      if (eighteen2 < eighteen)
+        eighteen2++;
+      if (nineteen2 < nineteen)
+        nineteen2++;
+      if (twenty2 < twenty)
+        twenty2++;
+      if (twentyone2 < twentyone)
+        twentyone2++;
+      if (twentytwo2 < twentytwo)
+        twentytwo2++;
+      if (twentythree2 < twentythree)
+        twentythree2++;
+      noStroke();
+      textSize(20);
+      fill(zero2, zero2 / 4, zero2 / 4);
+      rect(50, 450, 40, -zero2 * 2);
+      text(zero2, 50, 450 - zero2 * 2);
+      fill(one2, one2 / 4, one2 / 4);
+      rect(100, 450, 40, -one2 * 2);
+      text(one2, 100, 450 - one2 * 2);
+      fill(two2, two2 / 4, two2 / 4);
+      rect(150, 450, 40, -two2 * 2);
+      text(two2, 150, 450 - two2 * 2);
+      fill(three2, three2 / 4, three2 / 4);
+      rect(200, 450, 40, -three2 * 2);
+      text(three2, 200, 450 - three2 * 2);
+      fill(four2, four2 / 4, four2 / 4);
+      rect(250, 450, 40, -four2 * 2);
+      text(four2, 250, 450 - four2 * 2);
+      fill(five2, five2 / 4, five2 / 4);
+      rect(300, 450, 40, -five2 * 2);
+      text(five2, 300, 450 - five2 * 2);
+      fill(six2, six2 / 4, six2 / 4);
+      rect(350, 450, 40, -six2 * 2);
+      text(six2, 350, 450 - six2 * 2);
+      fill(seven2, seven2 / 4, seven2 / 4);
+      rect(400, 450, 40, -seven2 * 2);
+      text(seven2, 400, 450 - seven2 * 2);
+      fill(eight2, eight2 / 4, eight2 / 4);
+      rect(450, 450, 40, -eight2 * 2);
+      text(eight2, 450, 450 - eight2 * 2);
+      fill(nine2, nine2 / 4, nine2 / 4);
+      rect(500, 450, 40, -nine2 * 2);
+      text(nine2, 500, 450 - nine2 * 2);
+      fill(ten2, ten2 / 4, ten2 / 4);
+      rect(550, 450, 40, -ten2 * 2);
+      text(ten2, 550, 450 - ten2 * 2);
+      fill(eleven2, eleven2 / 4, eleven2 / 4);
+      rect(600, 450, 40, -eleven2 * 2);
+      text(eleven2, 600, 450 - eleven2 * 2);
+      fill(twelve2, twelve2 / 4, twelve2 / 4);
+      rect(650, 450, 40, -twelve2 * 2);
+      text(twelve2, 650, 450 - twelve2 * 2);
+      fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
+      rect(700, 450, 40, -thirteen2 * 2);
+      text(thirteen2, 700, 450 - thirteen2 * 2);
+      fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
+      rect(750, 450, 40, -fourteen2 * 2);
+      text(fourteen2, 750, 450 - fourteen2 * 2);
+      fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
+      rect(800, 450, 40, -fifteen2 * 2);
+      text(fifteen2, 800, 450 - fifteen2 * 2);
+      fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
+      rect(850, 450, 40, -sixteen2 * 2);
+      text(sixteen2, 850, 450 - sixteen2 * 2);
+      fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
+      rect(900, 450, 40, -seventeen2 * 2);
+      text(seventeen2, 900, 450 - seventeen2 * 2);
+      fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
+      rect(950, 450, 40, -eighteen2 * 2);
+      text(eighteen2, 950, 450 - eighteen2 * 2);
+      fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
+      rect(1000, 450, 40, -nineteen2 * 2);
+      text(nineteen2, 1000, 450 - nineteen2 * 2);
+      fill(twenty2, twenty2 / 4, twenty2 / 4);
+      rect(1050, 450, 40, -twenty2 * 2);
+      text(twenty2, 1050, 450 - twenty2 * 2);
+
+      fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
+      rect(1100, 450, 40, -twentyone2 * 2);
+      text(twentyone2, 1100, 450 - twentyone2 * 2);
+
+      fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
+      rect(1150, 450, 40, -twentytwo2 * 2);
+      text(twentytwo2, 1150, 450 - twentytwo2 * 2);
+
+      fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
+      rect(1200, 450, 40, -twentythree2 * 2);
+      text(twentythree2, 1200, 450 - twentythree2 * 2);
+
+      fill(0);
+      ellipse(70, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("00", 57, 457);
+      fill(0);
+      ellipse(120, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("01", 107, 457);
+      fill(0);
+      ellipse(170, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("02", 157, 455);
+      fill(0);
+      ellipse(220, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("03", 207, 455);
+      fill(0);
+      ellipse(270, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("04", 257, 455);
+      fill(0);
+      ellipse(320, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("05", 307, 455);
+      fill(0);
+      ellipse(370, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("06", 357, 455);
+      fill(0);
+      ellipse(420, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("07", 407, 455);
+      fill(0);
+      ellipse(470, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("08", 457, 455);
+
+      fill(0);
+      ellipse(520, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("09", 507, 455);
+      fill(0);
+      ellipse(570, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("10", 557, 455);
+      fill(0);
+      ellipse(620, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("11", 607, 455);
+      fill(0);
+      ellipse(670, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("12", 657, 455);
+      fill(0);
+      ellipse(720, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("13", 707, 455);
+      fill(0);
+      ellipse(770, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("14", 757, 455);
+      fill(0);
+      ellipse(820, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("15", 807, 455);
+      fill(0);
+      ellipse(870, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("16", 857, 455);
+      fill(0);
+      ellipse(920, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("17", 907, 455);
+      fill(0);
+      ellipse(970, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("18", 957, 455);
+      fill(0);
+      ellipse(1020, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("19", 1007, 455);
+      fill(0);
+      ellipse(1070, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("20", 1057, 455);
+      fill(0);
+      ellipse(1120, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("21", 1107, 455);
+      fill(0);
+      ellipse(1170, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("22", 1157, 455);
+      fill(0);
+      ellipse(1220, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("23", 1207, 455);
+      fill(255);
+      ellipse(60, 60, 100, 100);
+      fill(0);
+      textSize(40);
+      text("Time of day (every hour)", 360, 520);
+      push();
+      translate(40, 430);
+      rotate(radians(-90));
+      text("# of incidents", 0, 0);
+      pop();
+      if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
+        pg2 = false;
+        pg0 = true;
+      }
+    }
+  }
+}
