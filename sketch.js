@@ -3,20 +3,28 @@ var sunday, monday, tuesday, wednesday, thursday, friday, saturday;
 var one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, zero;
 var sunday2, monday2, tuesday2, wednesday2, thursday2, friday2, saturday2;
 var one2, two2, three2, four2, five2, six2, seven2, eight2, nine2, ten2, eleven2, twelve2, thirteen2, fourteen2, fifteen2, sixteen2, seventeen2, eighteen2, nineteen2, twenty2, twentyone2, twentytwo2, twentythree2, zero2;
-var pg1, pg0, pg2, pg1Su, pg1Mo, pg1Tu, pg1We, pg1Th, pg1Fr, pg1Sa, pg1CNC, pg2CNC;
+var pg1, pg0, pg2, pg1Su, pg1Mo, pg1Tu, pg1We, pg1Th, pg1Fr, pg1Sa, pg1CNC, pg2CNC, pgM;
+var latitude = [];
+var longitude = [];
 var badge;
 var oneNC, twoNC, threeNC, fourNC, fiveNC, sixNC, sevenNC, eightNC, nineNC, tenNC, elevenNC, twelveNC, thirteenNC, fourteenNC, fifteenNC, sixteenNC, seventeenNC, eighteenNC, nineteenNC, twentyNC, twentyoneNC, twentytwoNC, twentythreeNC, zeroNC;
 var oneC, twoC, threeC, fourC, fiveC, sixC, sevenC, eightC, nineC, tenC, elevenC, twelveC, thirteenC, fourteenC, fifteenC, sixteenC, seventeenC, eighteenC, nineteenC, twentyC, twentyoneC, twentytwoC, twentythreeC, zeroC;
 var sundayA, mondayA, tuesdayA, wenesdayA, thursdayA, fridayA, saturdayA;
 var sundayNC, sundayC, mondayNC, mondayC, tuesdayNC, tuesdayC, wednesdayNC, wednesdayC, thursdayNC, thursdayC, fridayNC, fridayC, saturdayNC, saturdayC;
 var count;
+var mapImg;
+var smallLo = 180;
+var largeLo = -180;
 
+var smallLa = 180;
+var largeLa = -180;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   loadJSON("https://data.sfgov.org/resource/nwbb-fxkq.json", gotData);
   textFont(loadFont("Kanit-Regular.ttf"));
   badge = loadImage("badge-01.png");
+  mapImg = loadImage("Map.png");
   one = 0;
   two = 0;
   three = 0;
@@ -164,6 +172,9 @@ function setup() {
   pg1Sa = false;
   pg1CNC = false;
   pg2CNC = false;
+  pgM = false;
+
+  noStroke();
 }
 
 function gotData(data) {
@@ -422,6 +433,18 @@ function gotData(data) {
       }
     }
   }
+  for (var i = 0; i < myData.length; i++) {
+    latitude[i] = myData[i].latitude;
+    longitude[i] = myData[i].longitude;
+    if (longitude[i] > largeLo)
+      largeLo = longitude[i];
+    else if (longitude[i] < smallLo)
+      smallLo = longitude[i];
+      if (latitude[i] > largeLa)
+        largeLa = latitude[i];
+      else if (latitude[i] < smallLa)
+        smallLa= latitude[i];
+  }
   //  rect(50,50,sunday,50);
   //  text(sunday, 50,50); text("sunday",100,50);
   //  text(monday, 50,150);text("monday",100,150);
@@ -489,20 +512,54 @@ function draw() {
       fill(255);
       rect(150, 300, 200, 50);
       rect(700, 300, 200, 50);
+      rect(425, 400, 200, 50);
       fill(0);
       text("Day of Week", 715, 335);
       text("Time of Day", 165, 335);
-      if (mouseIsPressed && mouseX >= 700 && mouseX <= 1000 && mouseY >= 300 && mouseY <= 350) {
+      text("Map", 490, 435);
+      if (mouseIsPressed && mouseX >= 700 && mouseX <= 900 && mouseY >= 300 && mouseY <= 350) {
         resetValues();
         pg0 = false;
         pg1 = true;
       }
-      if (mouseIsPressed && mouseX >= 150 && mouseX <= 450 && mouseY >= 300 && mouseY <= 350) {
+      if (mouseIsPressed && mouseX >= 150 && mouseX <= 350 && mouseY >= 300 && mouseY <= 350) {
         resetValues();
         pg0 = false;
         pg2 = true;
       }
+      if (mouseIsPressed && mouseX >= 425 && mouseX <= 625 && mouseY >= 400 && mouseY <= 450) {
+        resetValues();
+        pg0 = false;
+        pgM = true;
+      }
 
+    }
+    if (pgM) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+    //  rect(100, 100, 1000, 700);
+      image(mapImg,445-500,380-500,1400,1400);
+      // fill(0);
+       // text(mouseX, 900, 100);
+       // text(mouseY, 200, 100);
+      for (var i = 0; i < myData.length; i++) {
+        if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+          fill(255,50,50);
+        }
+        else{
+          fill(50,50,255);
+        }
+
+        ellipse(map(latitude[i], smallLa, largeLa, 310,1100, true), map(longitude[i], smallLo, largeLo, 110, 910, true), 10, 10);
+      }
+
+      fill(255);
+      ellipse(60, 60, 100, 100);
+      if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
+        resetValues();
+        pgM = false;
+        pg0 = true;
+      }
     }
     if (pg1) {
       background(98, 101, 127);
@@ -1687,173 +1744,173 @@ function draw() {
       text(fourC, 250, 450 - four2 * 4);
 
       fill(five2, five2 / 4, five2 / 4);
-      rect(300, 450, 40, (-fiveC * 4)-fiveNC*4);
-      fill(five2/4, five2 / 4, five2);
+      rect(300, 450, 40, (-fiveC * 4) - fiveNC * 4);
+      fill(five2 / 4, five2 / 4, five2);
       rect(300, 450, 40, -fiveNC * 4);
       fill(150, 150, 255);
-      text(fiveNC, 300, 465 - five2 * 4+(fiveC*4));
+      text(fiveNC, 300, 465 - five2 * 4 + (fiveC * 4));
       fill(five2, five2 / 4, five2 / 4);
       text(fiveC, 300, 450 - five2 * 4);
 
       fill(six2, six2 / 4, six2 / 4);
-      rect(350, 450, 40, (-sixC * 4)-sixNC*4);
-      fill(six2/4, six2 / 4, six2);
+      rect(350, 450, 40, (-sixC * 4) - sixNC * 4);
+      fill(six2 / 4, six2 / 4, six2);
       rect(350, 450, 40, -sixNC * 4);
       fill(150, 150, 255);
-      text(sixNC, 350, 465 - six2 * 4+(sixC*4));
+      text(sixNC, 350, 465 - six2 * 4 + (sixC * 4));
       fill(six2, six2 / 4, six2 / 4);
       text(sixC, 350, 450 - six2 * 4);
 
       fill(seven2, seven2 / 4, seven2 / 4);
-      rect(400, 450, 40, (-sevenC * 4)-sevenNC*4);
-      fill(seven2/4, seven2 / 4, seven2);
+      rect(400, 450, 40, (-sevenC * 4) - sevenNC * 4);
+      fill(seven2 / 4, seven2 / 4, seven2);
       rect(400, 450, 40, -sevenNC * 4);
       fill(150, 150, 255);
-      text(sevenNC, 400, 465 - seven2 * 4+(sevenC*4));
+      text(sevenNC, 400, 465 - seven2 * 4 + (sevenC * 4));
       fill(seven2, seven2 / 4, seven2 / 4);
       text(sevenC, 400, 450 - seven2 * 4);
 
       fill(eight2, eight2 / 4, eight2 / 4);
-      rect(450, 450, 40, (-eightC * 4)-eightNC*4);
-      fill(eight2/4, eight2 / 4, eight2);
+      rect(450, 450, 40, (-eightC * 4) - eightNC * 4);
+      fill(eight2 / 4, eight2 / 4, eight2);
       rect(450, 450, 40, -eightNC * 4);
       fill(150, 150, 255);
-      text(eightNC, 450, 465 - eight2 * 4+(eightC*4));
+      text(eightNC, 450, 465 - eight2 * 4 + (eightC * 4));
       fill(eight2, eight2 / 4, eight2 / 4);
       text(eightC, 450, 450 - eight2 * 4);
 
       fill(nine2, nine2 / 4, nine2 / 4);
-      rect(500, 450, 40, (-nineC * 4)-nineNC*4);
-      fill(nine2/4, nine2 / 4, nine2);
+      rect(500, 450, 40, (-nineC * 4) - nineNC * 4);
+      fill(nine2 / 4, nine2 / 4, nine2);
       rect(500, 450, 40, -nineNC * 4);
       fill(150, 150, 255);
-      text(nineNC, 500, 465 - nine2 * 4+(nineC*4));
+      text(nineNC, 500, 465 - nine2 * 4 + (nineC * 4));
       fill(nine2, nine2 / 4, nine2 / 4);
       text(nineC, 500, 450 - nine2 * 4);
 
       fill(ten2, ten2 / 4, ten2 / 4);
-      rect(550, 450, 40, (-tenC * 4)-tenNC*4);
-      fill(ten2/4, ten2 / 4, ten2);
+      rect(550, 450, 40, (-tenC * 4) - tenNC * 4);
+      fill(ten2 / 4, ten2 / 4, ten2);
       rect(550, 450, 40, -tenNC * 4);
       fill(150, 150, 255);
-      text(tenNC, 550, 465 - ten2 * 4+(tenC*4));
+      text(tenNC, 550, 465 - ten2 * 4 + (tenC * 4));
       fill(ten2, ten2 / 4, ten2 / 4);
       text(tenC, 550, 450 - ten2 * 4);
 
       fill(eleven2, eleven2 / 4, eleven2 / 4);
-      rect(600, 450, 40, (-elevenC * 4)-elevenNC*4);
-      fill(eleven2/4, eleven2 / 4, eleven2);
+      rect(600, 450, 40, (-elevenC * 4) - elevenNC * 4);
+      fill(eleven2 / 4, eleven2 / 4, eleven2);
       rect(600, 450, 40, -elevenNC * 4);
       fill(150, 150, 255);
-      text(elevenNC, 600, 465 - eleven2 * 4+(elevenC*4));
+      text(elevenNC, 600, 465 - eleven2 * 4 + (elevenC * 4));
       fill(eleven2, eleven2 / 4, eleven2 / 4);
       text(elevenC, 600, 450 - eleven2 * 4);
 
       fill(twelve2, twelve2 / 4, twelve2 / 4);
-      rect(650, 450, 40, (-twelveC * 4)-twelveNC*4);
-      fill(twelve2/4, twelve2 / 4, twelve2);
+      rect(650, 450, 40, (-twelveC * 4) - twelveNC * 4);
+      fill(twelve2 / 4, twelve2 / 4, twelve2);
       rect(650, 450, 40, -twelveNC * 4);
       fill(150, 150, 255);
-      text(twelveNC, 650, 465 - twelve2 * 4+(twelveC*4));
+      text(twelveNC, 650, 465 - twelve2 * 4 + (twelveC * 4));
       fill(twelve2, twelve2 / 4, twelve2 / 4);
       text(twelveC, 650, 450 - twelve2 * 4);
 
       fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
-      rect(700, 450, 40, (-thirteenC * 4)-thirteenNC*4);
-      fill(thirteen2/4, thirteen2 / 4, thirteen2);
+      rect(700, 450, 40, (-thirteenC * 4) - thirteenNC * 4);
+      fill(thirteen2 / 4, thirteen2 / 4, thirteen2);
       rect(700, 450, 40, -thirteenNC * 4);
       fill(150, 150, 255);
-      text(thirteenNC, 700, 465 - thirteen2 * 4+(thirteenC*4));
+      text(thirteenNC, 700, 465 - thirteen2 * 4 + (thirteenC * 4));
       fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
       text(thirteenC, 700, 450 - thirteen2 * 4);
 
       fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
-      rect(750, 450, 40, (-fourteenC * 4)-fourteenNC*4);
-      fill(fourteen2/4, fourteen2 / 4, fourteen2);
+      rect(750, 450, 40, (-fourteenC * 4) - fourteenNC * 4);
+      fill(fourteen2 / 4, fourteen2 / 4, fourteen2);
       rect(750, 450, 40, -fourteenNC * 4);
       fill(150, 150, 255);
-      text(fourteenNC, 750, 465 - fourteen2 * 4+(fourteenC*4));
+      text(fourteenNC, 750, 465 - fourteen2 * 4 + (fourteenC * 4));
       fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
       text(fourteenC, 750, 450 - fourteen2 * 4);
 
       fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
-      rect(800, 450, 40, (-fifteenC * 4)-fifteenNC*4);
-      fill(fifteen2/4, fifteen2 / 4, fifteen2);
+      rect(800, 450, 40, (-fifteenC * 4) - fifteenNC * 4);
+      fill(fifteen2 / 4, fifteen2 / 4, fifteen2);
       rect(800, 450, 40, -fifteenNC * 4);
       fill(150, 150, 255);
-      text(fifteenNC, 800, 465 - fifteen2 * 4+(fifteenC*4));
+      text(fifteenNC, 800, 465 - fifteen2 * 4 + (fifteenC * 4));
       fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
       text(fifteenC, 800, 450 - fifteen2 * 4);
 
       fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
-      rect(850, 450, 40, (-sixteenC * 4)-sixteenNC*4);
-      fill(sixteen2/4, sixteen2 / 4, sixteen2);
+      rect(850, 450, 40, (-sixteenC * 4) - sixteenNC * 4);
+      fill(sixteen2 / 4, sixteen2 / 4, sixteen2);
       rect(850, 450, 40, -sixteenNC * 4);
       fill(150, 150, 255);
-      text(sixteenNC, 850, 465 - sixteen2 * 4+(sixteenC*4));
+      text(sixteenNC, 850, 465 - sixteen2 * 4 + (sixteenC * 4));
       fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
       text(sixteenC, 850, 450 - sixteen2 * 4);
 
       fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
-      rect(900, 450, 40, (-seventeenC * 4)-seventeenNC*4);
-      fill(seventeen2/4, seventeen2 / 4, seventeen2);
+      rect(900, 450, 40, (-seventeenC * 4) - seventeenNC * 4);
+      fill(seventeen2 / 4, seventeen2 / 4, seventeen2);
       rect(900, 450, 40, -seventeenNC * 4);
       fill(150, 150, 255);
-      text(seventeenNC, 900, 465 - seventeen2 * 4+(seventeenC*4));
+      text(seventeenNC, 900, 465 - seventeen2 * 4 + (seventeenC * 4));
       fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
       text(seventeenC, 900, 450 - seventeen2 * 4);
 
       fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
-      rect(950, 450, 40, (-eighteenC * 4)-eighteenNC*4);
-      fill(eighteen2/4, eighteen2 / 4, eighteen2);
+      rect(950, 450, 40, (-eighteenC * 4) - eighteenNC * 4);
+      fill(eighteen2 / 4, eighteen2 / 4, eighteen2);
       rect(950, 450, 40, -eighteenNC * 4);
       fill(150, 150, 255);
-      text(eighteenNC, 950, 465 - eighteen2 * 4+(eighteenC*4));
+      text(eighteenNC, 950, 465 - eighteen2 * 4 + (eighteenC * 4));
       fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
       text(eighteenC, 950, 450 - eighteen2 * 4);
 
       fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
-      rect(1000, 450, 40, (-nineteenC * 4)-nineteenNC*4);
-      fill(nineteen2/4, nineteen2 / 4, nineteen2);
+      rect(1000, 450, 40, (-nineteenC * 4) - nineteenNC * 4);
+      fill(nineteen2 / 4, nineteen2 / 4, nineteen2);
       rect(1000, 450, 40, -nineteenNC * 4);
       fill(150, 150, 255);
-      text(nineteenNC, 1000, 465 - nineteen2 * 4+(nineteenC*4));
+      text(nineteenNC, 1000, 465 - nineteen2 * 4 + (nineteenC * 4));
       fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
       text(nineteenC, 1000, 450 - nineteen2 * 4);
 
       fill(twenty2, twenty2 / 4, twenty2 / 4);
-      rect(1050, 450, 40, (-twentyC * 4)-twentyNC*4);
-      fill(twenty2/4, twenty2 / 4, twenty2);
+      rect(1050, 450, 40, (-twentyC * 4) - twentyNC * 4);
+      fill(twenty2 / 4, twenty2 / 4, twenty2);
       rect(1050, 450, 40, -twentyNC * 4);
       fill(150, 150, 255);
-      text(twentyNC, 1050, 465 - twenty2 * 4+(twentyC*4));
+      text(twentyNC, 1050, 465 - twenty2 * 4 + (twentyC * 4));
       fill(twenty2, twenty2 / 4, twenty2 / 4);
       text(twentyC, 1050, 450 - twenty2 * 4);
 
       fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
-      rect(1100, 450, 40, (-twentyoneC * 4)-twentyoneNC*4);
-      fill(twentyone2/4, twentyone2 / 4, twentyone2);
+      rect(1100, 450, 40, (-twentyoneC * 4) - twentyoneNC * 4);
+      fill(twentyone2 / 4, twentyone2 / 4, twentyone2);
       rect(1100, 450, 40, -twentyoneNC * 4);
       fill(150, 150, 255);
-      text(twentyoneNC, 1100, 465 - twentyone2 * 4+(twentyoneC*4));
+      text(twentyoneNC, 1100, 465 - twentyone2 * 4 + (twentyoneC * 4));
       fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
       text(twentyoneC, 1100, 450 - twentyone2 * 4);
 
       fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
-      rect(1150, 450, 40, (-twentytwoC * 4)-twentytwoNC*4);
-      fill(twentytwo2/4, twentytwo2 / 4, twentytwo2);
+      rect(1150, 450, 40, (-twentytwoC * 4) - twentytwoNC * 4);
+      fill(twentytwo2 / 4, twentytwo2 / 4, twentytwo2);
       rect(1150, 450, 40, -twentytwoNC * 4);
       fill(150, 150, 255);
-      text(twentytwoNC, 1150, 465 - twentytwo2 * 4+(twentytwoC*4));
+      text(twentytwoNC, 1150, 465 - twentytwo2 * 4 + (twentytwoC * 4));
       fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
       text(twentytwoC, 1150, 450 - twentytwo2 * 4);
 
       fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
-      rect(1200, 450, 40, (-twentythreeC * 4)-twentythreeNC*4);
-      fill(twentythree2/4, twentythree2 / 4, twentythree2);
+      rect(1200, 450, 40, (-twentythreeC * 4) - twentythreeNC * 4);
+      fill(twentythree2 / 4, twentythree2 / 4, twentythree2);
       rect(1200, 450, 40, -twentythreeNC * 4);
       fill(150, 150, 255);
-      text(twentythreeNC, 1200, 465 - twentythree2 * 4+(twentythreeC*4));
+      text(twentythreeNC, 1200, 465 - twentythree2 * 4 + (twentythreeC * 4));
       fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
       text(twentythreeC, 1200, 450 - twentythree2 * 4);
 
@@ -1999,7 +2056,7 @@ function draw() {
         pg2 = true;
       }
       if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
-        pg2 = false;
+        pg2CNC = false;
         pg0 = true;
       }
     }
