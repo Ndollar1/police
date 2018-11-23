@@ -18,13 +18,16 @@ var largeLo = -180;
 
 var smallLa = 180;
 var largeLa = -180;
-
+function preload(){
+  badge = loadImage("badge-01.png");
+  mapImg = loadImage("Map.png");
+}
 function setup() {
   createCanvas(windowWidth, windowHeight);
   loadJSON("https://data.sfgov.org/resource/nwbb-fxkq.json", gotData);
   textFont(loadFont("Kanit-Regular.ttf"));
-  badge = loadImage("badge-01.png");
-  mapImg = loadImage("Map.png");
+  // badge = loadImage("badge-01.png");
+  // mapImg = loadImage("Map.png");
   one = 0;
   two = 0;
   three = 0;
