@@ -3,8 +3,10 @@ var sunday, monday, tuesday, wednesday, thursday, friday, saturday;
 var one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, zero;
 var sunday2, monday2, tuesday2, wednesday2, thursday2, friday2, saturday2;
 var one2, two2, three2, four2, five2, six2, seven2, eight2, nine2, ten2, eleven2, twelve2, thirteen2, fourteen2, fifteen2, sixteen2, seventeen2, eighteen2, nineteen2, twenty2, twentyone2, twentytwo2, twentythree2, zero2;
-var pg1, pg0, pg2, pg1Su, pg1Mo, pg1Tu, pg1We, pg1Th, pg1Fr, pg1Sa, pg1CNC;
+var pg1, pg0, pg2, pg1Su, pg1Mo, pg1Tu, pg1We, pg1Th, pg1Fr, pg1Sa, pg1CNC, pg2CNC;
 var badge;
+var oneNC, twoNC, threeNC, fourNC, fiveNC, sixNC, sevenNC, eightNC, nineNC, tenNC, elevenNC, twelveNC, thirteenNC, fourteenNC, fifteenNC, sixteenNC, seventeenNC, eighteenNC, nineteenNC, twentyNC, twentyoneNC, twentytwoNC, twentythreeNC, zeroNC;
+var oneC, twoC, threeC, fourC, fiveC, sixC, sevenC, eightC, nineC, tenC, elevenC, twelveC, thirteenC, fourteenC, fifteenC, sixteenC, seventeenC, eighteenC, nineteenC, twentyC, twentyoneC, twentytwoC, twentythreeC, zeroC;
 var sundayA, mondayA, tuesdayA, wenesdayA, thursdayA, fridayA, saturdayA;
 var sundayNC, sundayC, mondayNC, mondayC, tuesdayNC, tuesdayC, wednesdayNC, wednesdayC, thursdayNC, thursdayC, fridayNC, fridayC, saturdayNC, saturdayC;
 var count;
@@ -39,6 +41,54 @@ function setup() {
   twentytwo = 0;
   twentythree = 0;
   zero = 0;
+  oneC = 0;
+  twoC = 0;
+  threeC = 0;
+  fourC = 0;
+  fiveC = 0;
+  sixC = 0;
+  sevenC = 0;
+  eightC = 0;
+  nineC = 0;
+  tenC = 0;
+  elevenC = 0;
+  twelveC = 0;
+  thirteenC = 0;
+  fourteenC = 0;
+  fifteenC = 0;
+  sixteenC = 0;
+  seventeenC = 0;
+  eighteenC = 0;
+  nineteenC = 0;
+  twentyC = 0;
+  twentyoneC = 0;
+  twentytwoC = 0;
+  twentythreeC = 0;
+  zeroC = 0;
+  oneNC = 0;
+  twoNC = 0;
+  threeNC = 0;
+  fourNC = 0;
+  fiveNC = 0;
+  sixNC = 0;
+  sevenNC = 0;
+  eightNC = 0;
+  nineNC = 0;
+  tenNC = 0;
+  elevenNC = 0;
+  twelveNC = 0;
+  thirteenNC = 0;
+  fourteenNC = 0;
+  fifteenNC = 0;
+  sixteenNC = 0;
+  seventeenNC = 0;
+  eighteenNC = 0;
+  nineteenNC = 0;
+  twentyNC = 0;
+  twentyoneNC = 0;
+  twentytwoNC = 0;
+  twentythreeNC = 0;
+  zeroNC = 0;
   one2 = 0;
   two2 = 0;
   three2 = 0;
@@ -113,6 +163,7 @@ function setup() {
   pg1Fr = false;
   pg1Sa = false;
   pg1CNC = false;
+  pg2CNC = false;
 }
 
 function gotData(data) {
@@ -178,54 +229,198 @@ function gotData(data) {
     }
   }
   for (var i = 0; i < myData.length; i++) {
-    if (split(myData[i].incident_time, ":")[0] == "00")
+    if (split(myData[i].incident_time, ":")[0] == "00") {
       zero++;
-    if (split(myData[i].incident_time, ":")[0] == "01")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        zeroC++;
+      } else {
+        zeroNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "01") {
       one++;
-    if (split(myData[i].incident_time, ":")[0] == "02")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        oneC++;
+      } else {
+        oneNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "02") {
       two++;
-    if (split(myData[i].incident_time, ":")[0] == "03")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        twoC++;
+      } else {
+        twoNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "03") {
       three++;
-    if (split(myData[i].incident_time, ":")[0] == "04")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        threeC++;
+      } else {
+        threeNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "04") {
       four++;
-    if (split(myData[i].incident_time, ":")[0] == "05")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        fourC++;
+      } else {
+        fourNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "05") {
       five++;
-    if (split(myData[i].incident_time, ":")[0] == "06")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        fiveC++;
+      } else {
+        fiveNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "06") {
       six++;
-    if (split(myData[i].incident_time, ":")[0] == "07")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        sixC++;
+      } else {
+        sixNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "07") {
       seven++;
-    if (split(myData[i].incident_time, ":")[0] == "08")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        sevenC++;
+      } else {
+        sevenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "08") {
       eight++;
-    if (split(myData[i].incident_time, ":")[0] == "09")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        eightC++;
+      } else {
+        eightNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "09") {
       nine++;
-    if (split(myData[i].incident_time, ":")[0] == "10")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        nineC++;
+      } else {
+        nineNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "10") {
       ten++;
-    if (split(myData[i].incident_time, ":")[0] == "11")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        tenC++;
+      } else {
+        tenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "11") {
       eleven++;
-    if (split(myData[i].incident_time, ":")[0] == "12")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        elevenC++;
+      } else {
+        elevenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "12") {
       twelve++;
-    if (split(myData[i].incident_time, ":")[0] == "13")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        twelveC++;
+      } else {
+        twelveNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "13") {
       thirteen++;
-    if (split(myData[i].incident_time, ":")[0] == "14")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        thirteenC++;
+      } else {
+        thirteenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "14") {
       fourteen++;
-    if (split(myData[i].incident_time, ":")[0] == "15")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        fourteenC++;
+      } else {
+        fourteenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "15") {
       fifteen++;
-    if (split(myData[i].incident_time, ":")[0] == "16")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        fifteenC++;
+      } else {
+        fifteenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "16") {
       sixteen++;
-    if (split(myData[i].incident_time, ":")[0] == "17")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        sixteenC++;
+      } else {
+        sixteenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "17") {
       seventeen++;
-    if (split(myData[i].incident_time, ":")[0] == "18")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        seventeenC++;
+      } else {
+        seventeenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "18") {
       eighteen++;
-    if (split(myData[i].incident_time, ":")[0] == "19")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        eighteenC++;
+      } else {
+        eighteenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "19") {
       nineteen++;
-    if (split(myData[i].incident_time, ":")[0] == "20")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        nineteenC++;
+      } else {
+        nineteenNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "20") {
       twenty++;
-    if (split(myData[i].incident_time, ":")[0] == "21")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        twentyC++;
+      } else {
+        twentyNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "21") {
       twentyone++;
-    if (split(myData[i].incident_time, ":")[0] == "22")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        twentyoneC++;
+      } else {
+        twentyoneNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "22") {
       twentytwo++;
-    if (split(myData[i].incident_time, ":")[0] == "23")
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        twentytwoC++;
+      } else {
+        twentytwoNC++;
+      }
+    }
+    if (split(myData[i].incident_time, ":")[0] == "23") {
       twentythree++;
+      if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
+        twentythreeC++;
+      } else {
+        twentythreeNC++;
+      }
+    }
   }
   //  rect(50,50,sunday,50);
   //  text(sunday, 50,50); text("sunday",100,50);
@@ -538,14 +733,14 @@ function draw() {
       text(fridayNC, 655, 675 - friday2 * 2 + (fridayC * 2));
 
       fill(saturday2, saturday2 / 4, saturday2 / 4);
-      rect(750, 650, 50, (-saturdayC * 2)-saturdayNC*2);
-      fill(saturday2/4, saturday2 / 4, saturday2);
+      rect(750, 650, 50, (-saturdayC * 2) - saturdayNC * 2);
+      fill(saturday2 / 4, saturday2 / 4, saturday2);
       rect(750, 650, 50, -saturdayNC * 2);
 
-fill(saturday2, saturday2 / 4, saturday2 / 4);
+      fill(saturday2, saturday2 / 4, saturday2 / 4);
       text(saturdayC, 755, 650 - saturday2 * 2);
       fill(150, 150, 255);
-      text(saturdayNC, 755, 675 - saturday2 * 2+(saturdayC*2));
+      text(saturdayNC, 755, 675 - saturday2 * 2 + (saturdayC * 2));
 
       fill(0);
       ellipse(175, 650, 75, 75);
@@ -1172,80 +1367,80 @@ fill(saturday2, saturday2 / 4, saturday2 / 4);
       noStroke();
       textSize(20);
       fill(zero2, zero2 / 4, zero2 / 4);
-      rect(50, 450, 40, -zero2 * 2);
-      text(zero2, 50, 450 - zero2 * 2);
+      rect(50, 450, 40, -zero2 * 4);
+      text(zero2, 50, 450 - zero2 * 4);
       fill(one2, one2 / 4, one2 / 4);
-      rect(100, 450, 40, -one2 * 2);
-      text(one2, 100, 450 - one2 * 2);
+      rect(100, 450, 40, -one2 * 4);
+      text(one2, 100, 450 - one2 * 4);
       fill(two2, two2 / 4, two2 / 4);
-      rect(150, 450, 40, -two2 * 2);
-      text(two2, 150, 450 - two2 * 2);
+      rect(150, 450, 40, -two2 * 4);
+      text(two2, 150, 450 - two2 * 4);
       fill(three2, three2 / 4, three2 / 4);
-      rect(200, 450, 40, -three2 * 2);
-      text(three2, 200, 450 - three2 * 2);
+      rect(200, 450, 40, -three2 * 4);
+      text(three2, 200, 450 - three2 * 4);
       fill(four2, four2 / 4, four2 / 4);
-      rect(250, 450, 40, -four2 * 2);
-      text(four2, 250, 450 - four2 * 2);
+      rect(250, 450, 40, -four2 * 4);
+      text(four2, 250, 450 - four2 * 4);
       fill(five2, five2 / 4, five2 / 4);
-      rect(300, 450, 40, -five2 * 2);
-      text(five2, 300, 450 - five2 * 2);
+      rect(300, 450, 40, -five2 * 4);
+      text(five2, 300, 450 - five2 * 4);
       fill(six2, six2 / 4, six2 / 4);
-      rect(350, 450, 40, -six2 * 2);
-      text(six2, 350, 450 - six2 * 2);
+      rect(350, 450, 40, -six2 * 4);
+      text(six2, 350, 450 - six2 * 4);
       fill(seven2, seven2 / 4, seven2 / 4);
-      rect(400, 450, 40, -seven2 * 2);
-      text(seven2, 400, 450 - seven2 * 2);
+      rect(400, 450, 40, -seven2 * 4);
+      text(seven2, 400, 450 - seven2 * 4);
       fill(eight2, eight2 / 4, eight2 / 4);
-      rect(450, 450, 40, -eight2 * 2);
-      text(eight2, 450, 450 - eight2 * 2);
+      rect(450, 450, 40, -eight2 * 4);
+      text(eight2, 450, 450 - eight2 * 4);
       fill(nine2, nine2 / 4, nine2 / 4);
-      rect(500, 450, 40, -nine2 * 2);
-      text(nine2, 500, 450 - nine2 * 2);
+      rect(500, 450, 40, -nine2 * 4);
+      text(nine2, 500, 450 - nine2 * 4);
       fill(ten2, ten2 / 4, ten2 / 4);
-      rect(550, 450, 40, -ten2 * 2);
-      text(ten2, 550, 450 - ten2 * 2);
+      rect(550, 450, 40, -ten2 * 4);
+      text(ten2, 550, 450 - ten2 * 4);
       fill(eleven2, eleven2 / 4, eleven2 / 4);
-      rect(600, 450, 40, -eleven2 * 2);
-      text(eleven2, 600, 450 - eleven2 * 2);
+      rect(600, 450, 40, -eleven2 * 4);
+      text(eleven2, 600, 450 - eleven2 * 4);
       fill(twelve2, twelve2 / 4, twelve2 / 4);
-      rect(650, 450, 40, -twelve2 * 2);
-      text(twelve2, 650, 450 - twelve2 * 2);
+      rect(650, 450, 40, -twelve2 * 4);
+      text(twelve2, 650, 450 - twelve2 * 4);
       fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
-      rect(700, 450, 40, -thirteen2 * 2);
-      text(thirteen2, 700, 450 - thirteen2 * 2);
+      rect(700, 450, 40, -thirteen2 * 4);
+      text(thirteen2, 700, 450 - thirteen2 * 4);
       fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
-      rect(750, 450, 40, -fourteen2 * 2);
-      text(fourteen2, 750, 450 - fourteen2 * 2);
+      rect(750, 450, 40, -fourteen2 * 4);
+      text(fourteen2, 750, 450 - fourteen2 * 4);
       fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
-      rect(800, 450, 40, -fifteen2 * 2);
-      text(fifteen2, 800, 450 - fifteen2 * 2);
+      rect(800, 450, 40, -fifteen2 * 4);
+      text(fifteen2, 800, 450 - fifteen2 * 4);
       fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
-      rect(850, 450, 40, -sixteen2 * 2);
-      text(sixteen2, 850, 450 - sixteen2 * 2);
+      rect(850, 450, 40, -sixteen2 * 4);
+      text(sixteen2, 850, 450 - sixteen2 * 4);
       fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
-      rect(900, 450, 40, -seventeen2 * 2);
-      text(seventeen2, 900, 450 - seventeen2 * 2);
+      rect(900, 450, 40, -seventeen2 * 4);
+      text(seventeen2, 900, 450 - seventeen2 * 4);
       fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
-      rect(950, 450, 40, -eighteen2 * 2);
-      text(eighteen2, 950, 450 - eighteen2 * 2);
+      rect(950, 450, 40, -eighteen2 * 4);
+      text(eighteen2, 950, 450 - eighteen2 * 4);
       fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
-      rect(1000, 450, 40, -nineteen2 * 2);
-      text(nineteen2, 1000, 450 - nineteen2 * 2);
+      rect(1000, 450, 40, -nineteen2 * 4);
+      text(nineteen2, 1000, 450 - nineteen2 * 4);
       fill(twenty2, twenty2 / 4, twenty2 / 4);
-      rect(1050, 450, 40, -twenty2 * 2);
-      text(twenty2, 1050, 450 - twenty2 * 2);
+      rect(1050, 450, 40, -twenty2 * 4);
+      text(twenty2, 1050, 450 - twenty2 * 4);
 
       fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
-      rect(1100, 450, 40, -twentyone2 * 2);
-      text(twentyone2, 1100, 450 - twentyone2 * 2);
+      rect(1100, 450, 40, -twentyone2 * 4);
+      text(twentyone2, 1100, 450 - twentyone2 * 4);
 
       fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
-      rect(1150, 450, 40, -twentytwo2 * 2);
-      text(twentytwo2, 1150, 450 - twentytwo2 * 2);
+      rect(1150, 450, 40, -twentytwo2 * 4);
+      text(twentytwo2, 1150, 450 - twentytwo2 * 4);
 
       fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
-      rect(1200, 450, 40, -twentythree2 * 2);
-      text(twentythree2, 1200, 450 - twentythree2 * 2);
+      rect(1200, 450, 40, -twentythree2 * 4);
+      text(twentythree2, 1200, 450 - twentythree2 * 4);
 
       fill(0);
       ellipse(70, 450, 40, 40);
@@ -1378,6 +1573,431 @@ fill(saturday2, saturday2 / 4, saturday2 / 4);
       rotate(radians(-90));
       text("# of incidents", 0, 0);
       pop();
+      fill(255);
+      rect(50, 500, 200, 50);
+      rect(900, 500, 400, 50);
+      fill(0);
+      text("Total", 70, 540);
+      text("Violent/Non-Violent", 910, 535);
+      if (mouseIsPressed && mouseX >= 900 && mouseX <= 1300 && mouseY >= 500 && mouseY <= 550) {
+        pg2CNC = true;
+        pg2 = false;
+      }
+      if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
+        pg2 = false;
+        pg0 = true;
+      }
+    }
+    if (pg2CNC) {
+      background(98, 101, 127);
+      image(badge, 275, 0);
+      if (zero2 < zero)
+        zero2++;
+      if (one2 < one)
+        one2++;
+      if (two2 < two)
+        two2++;
+      if (three2 < three)
+        three2++;
+      if (four2 < four)
+        four2++;
+      if (five2 < five)
+        five2++;
+      if (six2 < six)
+        six2++;
+      if (seven2 < seven)
+        seven2++;
+      if (eight2 < eight)
+        eight2++;
+      if (nine2 < nine)
+        nine2++;
+      if (ten2 < ten)
+        ten2++;
+      if (eleven2 < eleven)
+        eleven2++;
+      if (twelve2 < twelve)
+        twelve2++;
+      if (thirteen2 < thirteen)
+        thirteen2++;
+      if (fourteen2 < fourteen)
+        fourteen2++;
+      if (fifteen2 < fifteen)
+        fifteen2++;
+      if (sixteen2 < sixteen)
+        sixteen2++;
+      if (seventeen2 < seventeen)
+        seventeen2++;
+      if (eighteen2 < eighteen)
+        eighteen2++;
+      if (nineteen2 < nineteen)
+        nineteen2++;
+      if (twenty2 < twenty)
+        twenty2++;
+      if (twentyone2 < twentyone)
+        twentyone2++;
+      if (twentytwo2 < twentytwo)
+        twentytwo2++;
+      if (twentythree2 < twentythree)
+        twentythree2++;
+      noStroke();
+      textSize(20);
+      fill(zero2, zero2 / 4, zero2 / 4);
+      rect(50, 450, 40, (-zeroC * 4) - zeroNC * 4);
+      fill(zero2 / 4, zero2 / 4, zero2);
+      rect(50, 450, 40, -zeroNC * 4);
+      fill(150, 150, 255);
+      text(zeroNC, 50, 465 - zero2 * 4 + (zeroC * 4));
+      fill(zero2, zero2 / 4, zero2 / 4);
+      text(zeroC, 50, 450 - zero2 * 4);
+
+      fill(one2, one2 / 4, one2 / 4);
+      rect(100, 450, 40, (-oneC * 4) - oneNC * 4);
+      fill(one2 / 4, one2 / 4, one2);
+      rect(100, 450, 40, -oneNC * 4);
+      fill(150, 150, 255);
+      text(oneNC, 100, 465 - one2 * 4 + (oneC * 4));
+      fill(one2, one2 / 4, one2 / 4);
+      text(oneC, 100, 450 - one2 * 4);
+
+      fill(two2, two2 / 4, two2 / 4);
+      rect(150, 450, 40, (-twoC * 4) - twoNC * 4);
+      fill(two2 / 4, two2 / 4, two2);
+      rect(150, 450, 40, -twoNC * 4);
+      fill(150, 150, 255);
+      text(twoNC, 150, 465 - two2 * 4 + (twoC * 4));
+      fill(two2, two2 / 4, two2 / 4);
+      text(twoC, 150, 450 - two2 * 4);
+
+      fill(three2, three2 / 4, three2 / 4);
+      rect(200, 450, 40, (-threeC * 4) - threeNC * 4);
+      fill(three2 / 4, three2 / 4, three2);
+      rect(200, 450, 40, -threeNC * 4);
+      fill(150, 150, 255);
+      text(threeNC, 200, 465 - three2 * 4 + (threeC * 4));
+      fill(three2, three2 / 4, three2 / 4);
+      text(threeC, 200, 450 - three2 * 4);
+
+      fill(four2, four2 / 4, four2 / 4);
+      rect(250, 450, 40, (-fourC * 4) - fourNC * 4);
+      fill(four2 / 4, four2 / 4, four2);
+      rect(250, 450, 40, -fourNC * 4);
+      fill(150, 150, 255);
+      text(fourNC, 250, 465 - four2 * 4 + (fourC * 4));
+      fill(four2, four2 / 4, four2 / 4);
+      text(fourC, 250, 450 - four2 * 4);
+
+      fill(five2, five2 / 4, five2 / 4);
+      rect(300, 450, 40, (-fiveC * 4)-fiveNC*4);
+      fill(five2/4, five2 / 4, five2);
+      rect(300, 450, 40, -fiveNC * 4);
+      fill(150, 150, 255);
+      text(fiveNC, 300, 465 - five2 * 4+(fiveC*4));
+      fill(five2, five2 / 4, five2 / 4);
+      text(fiveC, 300, 450 - five2 * 4);
+
+      fill(six2, six2 / 4, six2 / 4);
+      rect(350, 450, 40, (-sixC * 4)-sixNC*4);
+      fill(six2/4, six2 / 4, six2);
+      rect(350, 450, 40, -sixNC * 4);
+      fill(150, 150, 255);
+      text(sixNC, 350, 465 - six2 * 4+(sixC*4));
+      fill(six2, six2 / 4, six2 / 4);
+      text(sixC, 350, 450 - six2 * 4);
+
+      fill(seven2, seven2 / 4, seven2 / 4);
+      rect(400, 450, 40, (-sevenC * 4)-sevenNC*4);
+      fill(seven2/4, seven2 / 4, seven2);
+      rect(400, 450, 40, -sevenNC * 4);
+      fill(150, 150, 255);
+      text(sevenNC, 400, 465 - seven2 * 4+(sevenC*4));
+      fill(seven2, seven2 / 4, seven2 / 4);
+      text(sevenC, 400, 450 - seven2 * 4);
+
+      fill(eight2, eight2 / 4, eight2 / 4);
+      rect(450, 450, 40, (-eightC * 4)-eightNC*4);
+      fill(eight2/4, eight2 / 4, eight2);
+      rect(450, 450, 40, -eightNC * 4);
+      fill(150, 150, 255);
+      text(eightNC, 450, 465 - eight2 * 4+(eightC*4));
+      fill(eight2, eight2 / 4, eight2 / 4);
+      text(eightC, 450, 450 - eight2 * 4);
+
+      fill(nine2, nine2 / 4, nine2 / 4);
+      rect(500, 450, 40, (-nineC * 4)-nineNC*4);
+      fill(nine2/4, nine2 / 4, nine2);
+      rect(500, 450, 40, -nineNC * 4);
+      fill(150, 150, 255);
+      text(nineNC, 500, 465 - nine2 * 4+(nineC*4));
+      fill(nine2, nine2 / 4, nine2 / 4);
+      text(nineC, 500, 450 - nine2 * 4);
+
+      fill(ten2, ten2 / 4, ten2 / 4);
+      rect(550, 450, 40, (-tenC * 4)-tenNC*4);
+      fill(ten2/4, ten2 / 4, ten2);
+      rect(550, 450, 40, -tenNC * 4);
+      fill(150, 150, 255);
+      text(tenNC, 550, 465 - ten2 * 4+(tenC*4));
+      fill(ten2, ten2 / 4, ten2 / 4);
+      text(tenC, 550, 450 - ten2 * 4);
+
+      fill(eleven2, eleven2 / 4, eleven2 / 4);
+      rect(600, 450, 40, (-elevenC * 4)-elevenNC*4);
+      fill(eleven2/4, eleven2 / 4, eleven2);
+      rect(600, 450, 40, -elevenNC * 4);
+      fill(150, 150, 255);
+      text(elevenNC, 600, 465 - eleven2 * 4+(elevenC*4));
+      fill(eleven2, eleven2 / 4, eleven2 / 4);
+      text(elevenC, 600, 450 - eleven2 * 4);
+
+      fill(twelve2, twelve2 / 4, twelve2 / 4);
+      rect(650, 450, 40, (-twelveC * 4)-twelveNC*4);
+      fill(twelve2/4, twelve2 / 4, twelve2);
+      rect(650, 450, 40, -twelveNC * 4);
+      fill(150, 150, 255);
+      text(twelveNC, 650, 465 - twelve2 * 4+(twelveC*4));
+      fill(twelve2, twelve2 / 4, twelve2 / 4);
+      text(twelveC, 650, 450 - twelve2 * 4);
+
+      fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
+      rect(700, 450, 40, (-thirteenC * 4)-thirteenNC*4);
+      fill(thirteen2/4, thirteen2 / 4, thirteen2);
+      rect(700, 450, 40, -thirteenNC * 4);
+      fill(150, 150, 255);
+      text(thirteenNC, 700, 465 - thirteen2 * 4+(thirteenC*4));
+      fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
+      text(thirteenC, 700, 450 - thirteen2 * 4);
+
+      fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
+      rect(750, 450, 40, (-fourteenC * 4)-fourteenNC*4);
+      fill(fourteen2/4, fourteen2 / 4, fourteen2);
+      rect(750, 450, 40, -fourteenNC * 4);
+      fill(150, 150, 255);
+      text(fourteenNC, 750, 465 - fourteen2 * 4+(fourteenC*4));
+      fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
+      text(fourteenC, 750, 450 - fourteen2 * 4);
+
+      fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
+      rect(800, 450, 40, (-fifteenC * 4)-fifteenNC*4);
+      fill(fifteen2/4, fifteen2 / 4, fifteen2);
+      rect(800, 450, 40, -fifteenNC * 4);
+      fill(150, 150, 255);
+      text(fifteenNC, 800, 465 - fifteen2 * 4+(fifteenC*4));
+      fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
+      text(fifteenC, 800, 450 - fifteen2 * 4);
+
+      fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
+      rect(850, 450, 40, (-sixteenC * 4)-sixteenNC*4);
+      fill(sixteen2/4, sixteen2 / 4, sixteen2);
+      rect(850, 450, 40, -sixteenNC * 4);
+      fill(150, 150, 255);
+      text(sixteenNC, 850, 465 - sixteen2 * 4+(sixteenC*4));
+      fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
+      text(sixteenC, 850, 450 - sixteen2 * 4);
+
+      fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
+      rect(900, 450, 40, (-seventeenC * 4)-seventeenNC*4);
+      fill(seventeen2/4, seventeen2 / 4, seventeen2);
+      rect(900, 450, 40, -seventeenNC * 4);
+      fill(150, 150, 255);
+      text(seventeenNC, 900, 465 - seventeen2 * 4+(seventeenC*4));
+      fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
+      text(seventeenC, 900, 450 - seventeen2 * 4);
+
+      fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
+      rect(950, 450, 40, (-eighteenC * 4)-eighteenNC*4);
+      fill(eighteen2/4, eighteen2 / 4, eighteen2);
+      rect(950, 450, 40, -eighteenNC * 4);
+      fill(150, 150, 255);
+      text(eighteenNC, 950, 465 - eighteen2 * 4+(eighteenC*4));
+      fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
+      text(eighteenC, 950, 450 - eighteen2 * 4);
+
+      fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
+      rect(1000, 450, 40, (-nineteenC * 4)-nineteenNC*4);
+      fill(nineteen2/4, nineteen2 / 4, nineteen2);
+      rect(1000, 450, 40, -nineteenNC * 4);
+      fill(150, 150, 255);
+      text(nineteenNC, 1000, 465 - nineteen2 * 4+(nineteenC*4));
+      fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
+      text(nineteenC, 1000, 450 - nineteen2 * 4);
+
+      fill(twenty2, twenty2 / 4, twenty2 / 4);
+      rect(1050, 450, 40, (-twentyC * 4)-twentyNC*4);
+      fill(twenty2/4, twenty2 / 4, twenty2);
+      rect(1050, 450, 40, -twentyNC * 4);
+      fill(150, 150, 255);
+      text(twentyNC, 1050, 465 - twenty2 * 4+(twentyC*4));
+      fill(twenty2, twenty2 / 4, twenty2 / 4);
+      text(twentyC, 1050, 450 - twenty2 * 4);
+
+      fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
+      rect(1100, 450, 40, (-twentyoneC * 4)-twentyoneNC*4);
+      fill(twentyone2/4, twentyone2 / 4, twentyone2);
+      rect(1100, 450, 40, -twentyoneNC * 4);
+      fill(150, 150, 255);
+      text(twentyoneNC, 1100, 465 - twentyone2 * 4+(twentyoneC*4));
+      fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
+      text(twentyoneC, 1100, 450 - twentyone2 * 4);
+
+      fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
+      rect(1150, 450, 40, (-twentytwoC * 4)-twentytwoNC*4);
+      fill(twentytwo2/4, twentytwo2 / 4, twentytwo2);
+      rect(1150, 450, 40, -twentytwoNC * 4);
+      fill(150, 150, 255);
+      text(twentytwoNC, 1150, 465 - twentytwo2 * 4+(twentytwoC*4));
+      fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
+      text(twentytwoC, 1150, 450 - twentytwo2 * 4);
+
+      fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
+      rect(1200, 450, 40, (-twentythreeC * 4)-twentythreeNC*4);
+      fill(twentythree2/4, twentythree2 / 4, twentythree2);
+      rect(1200, 450, 40, -twentythreeNC * 4);
+      fill(150, 150, 255);
+      text(twentythreeNC, 1200, 465 - twentythree2 * 4+(twentythreeC*4));
+      fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
+      text(twentythreeC, 1200, 450 - twentythree2 * 4);
+
+      fill(0);
+      ellipse(70, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("00", 57, 457);
+      fill(0);
+      ellipse(120, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("01", 107, 457);
+      fill(0);
+      ellipse(170, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("02", 157, 455);
+      fill(0);
+      ellipse(220, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("03", 207, 455);
+      fill(0);
+      ellipse(270, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("04", 257, 455);
+      fill(0);
+      ellipse(320, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("05", 307, 455);
+      fill(0);
+      ellipse(370, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("06", 357, 455);
+      fill(0);
+      ellipse(420, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("07", 407, 455);
+      fill(0);
+      ellipse(470, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("08", 457, 455);
+
+      fill(0);
+      ellipse(520, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("09", 507, 455);
+      fill(0);
+      ellipse(570, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("10", 557, 455);
+      fill(0);
+      ellipse(620, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("11", 607, 455);
+      fill(0);
+      ellipse(670, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("12", 657, 455);
+      fill(0);
+      ellipse(720, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("13", 707, 455);
+      fill(0);
+      ellipse(770, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("14", 757, 455);
+      fill(0);
+      ellipse(820, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("15", 807, 455);
+      fill(0);
+      ellipse(870, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("16", 857, 455);
+      fill(0);
+      ellipse(920, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("17", 907, 455);
+      fill(0);
+      ellipse(970, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("18", 957, 455);
+      fill(0);
+      ellipse(1020, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("19", 1007, 455);
+      fill(0);
+      ellipse(1070, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("20", 1057, 455);
+      fill(0);
+      ellipse(1120, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("21", 1107, 455);
+      fill(0);
+      ellipse(1170, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("22", 1157, 455);
+      fill(0);
+      ellipse(1220, 450, 40, 40);
+      fill(255);
+      textSize(20);
+      text("23", 1207, 455);
+      fill(255);
+      ellipse(60, 60, 100, 100);
+      fill(0);
+      textSize(40);
+      text("Time of day (every hour)", 360, 520);
+      push();
+      translate(40, 430);
+      rotate(radians(-90));
+      text("# of incidents", 0, 0);
+      pop();
+      fill(255);
+      rect(50, 500, 200, 50);
+      rect(900, 500, 400, 50);
+      fill(0);
+      text("Total", 70, 540);
+      text("Violent/Non-Violent", 910, 535);
+      if (mouseIsPressed && mouseX >= 50 && mouseX <= 250 && mouseY >= 500 && mouseY <= 550) {
+        pg2CNC = false;
+        pg2 = true;
+      }
       if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
         pg2 = false;
         pg0 = true;
