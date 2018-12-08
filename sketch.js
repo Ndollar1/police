@@ -19,7 +19,7 @@ var largeLo = -180;
 var smallLa = 180;
 var largeLa = -180;
 
-function preload(){
+function preload() {
   badge = loadImage("badge-01.png");
   mapImg = loadImage("Map.png");
 }
@@ -445,10 +445,10 @@ function gotData(data) {
       largeLo = longitude[i];
     else if (longitude[i] < smallLo)
       smallLo = longitude[i];
-      if (latitude[i] > largeLa)
-        largeLa = latitude[i];
-      else if (latitude[i] < smallLa)
-        smallLa= latitude[i];
+    if (latitude[i] > largeLa)
+      largeLa = latitude[i];
+    else if (latitude[i] < smallLa)
+      smallLa = latitude[i];
   }
   //  rect(50,50,sunday,50);
   //  text(sunday, 50,50); text("sunday",100,50);
@@ -512,6 +512,7 @@ function draw() {
       background(98, 101, 127);
       image(badge, 275, 0);
       textSize(60);
+      fill(255);
       text("SFPD Incident Reports: 2018", 125, 150);
       textSize(30);
       fill(255);
@@ -542,19 +543,18 @@ function draw() {
     if (pgM) {
       background(98, 101, 127);
       image(badge, 275, 0);
-    //  rect(100, 100, 1000, 700);
-      image(mapImg,445-500,380-500,1400,1400);
+      //  rect(100, 100, 1000, 700);
+      image(mapImg, 445 - 500, 380 - 500, 1400, 1400);
       // fill(0);
-       // text(mouseX, 900, 100);
-       // text(mouseY, 200, 100);
+      // text(mouseX, 900, 100);
+      // text(mouseY, 200, 100);
       for (var i = 0; i < myData.length; i++) {
         if (myData[i].incident_category == "Offences Against The Family And Children" || myData[i].incident_category == "Assault" || myData[i].incident_category == "Weapons Offense" || myData[i].incident_category == "Robbery" || myData[i].incident_category == "Arson" || myData[i].incident_category == "Sex Offense") {
-          fill(255,50,50);
+          fill(255, 50, 50);
+        } else {
+          fill(50, 50, 255);
         }
-        else{
-          fill(50,50,255);
-        }
-        ellipse(map(latitude[i], smallLa, largeLa, 310,1100, true), map(longitude[i], smallLo, largeLo, 110, 910, true), 10, 10);
+        ellipse(map(latitude[i], smallLa, largeLa, 310, 1100, true), map(longitude[i], smallLo, largeLo, 110, 910, true), 10, 10);
       }
 
       fill(255);
@@ -585,27 +585,57 @@ function draw() {
         friday2++;
       noStroke();
       textSize(24);
-      fill(sunday2, sunday2 / 4, sunday2 / 4);
+      if (mouseX >= 150 && mouseX <= 200 && mouseY <= 650 && mouseY >= 650 - sunday2 * 2)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(150, 650, 50, -sunday2 * 2);
       text(sunday2, 155, 650 - sunday2 * 2);
-      fill(monday2, monday2 / 4, monday2 / 4);
+      if (mouseX >= 250 && mouseX <= 300 && mouseY <= 650 && mouseY >= 650 - monday2 * 2)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(250, 650, 50, -monday2 * 2);
       text(monday2, 255, 650 - monday2 * 2);
-      fill(tuesday2, tuesday2 / 4, tuesday2 / 4);
+      if (mouseX >= 350 && mouseX <= 400 && mouseY <= 650 && mouseY >= 650 - tuesday2 * 2)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(350, 650, 50, -tuesday2 * 2);
       text(tuesday2, 355, 650 - tuesday2 * 2);
-      fill(wednesday2, wednesday2 / 4, wednesday2 / 4);
+      if (mouseX >= 450 && mouseX <= 500 && mouseY <= 650 && mouseY >= 650 - wednesday2 * 2)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(450, 650, 50, -wednesday2 * 2);
       text(wednesday2, 455, 650 - wednesday2 * 2);
-      fill(thursday2, thursday2 / 4, thursday2 / 4);
+      if (mouseX >= 550 && mouseX <= 600 && mouseY <= 650 && mouseY >= 650 - thursday2 * 2)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(550, 650, 50, -thursday2 * 2);
       text(thursday2, 555, 650 - thursday2 * 2);
-      fill(friday2, friday2 / 4, friday2 / 4);
+      if (mouseX >= 650 && mouseX <= 700 && mouseY <= 650 && mouseY >= 650 - friday2 * 2)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(650, 650, 50, -friday2 * 2);
       text(friday2, 655, 650 - friday2 * 2);
-      fill(saturday2, saturday2 / 4, saturday2 / 4);
+      if (mouseX >= 750 && mouseX <= 800 && mouseY <= 650 && mouseY >= 650 - saturday2 * 2)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(750, 650, 50, -saturday2 * 2);
       text(saturday2, 755, 650 - saturday2 * 2);
+
+
 
       fill(0);
       ellipse(175, 650, 75, 75);
@@ -643,7 +673,7 @@ function draw() {
       textSize(40);
       text("Sa", 752, 665);
       ellipse(60, 60, 100, 100);
-      fill(0);
+      fill(255);
       textSize(40);
       text("Day of the week", 300, 750);
       push();
@@ -657,6 +687,65 @@ function draw() {
       fill(0);
       text("Total", 70, 760);
       text("Violent/Non-Violent", 710, 760);
+
+
+      if (mouseX >= 150 && mouseX <= 200 && mouseY <= 650 && mouseY >= 650 - sunday2 * 2) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(sunday2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 250 && mouseX <= 300 && mouseY <= 650 && mouseY >= 650 - monday2 * 2) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(monday2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 350 && mouseX <= 400 && mouseY <= 650 && mouseY >= 650 - tuesday2 * 2) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(tuesday2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 450 && mouseX <= 500 && mouseY <= 650 && mouseY >= 650 - wednesday2 * 2) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(wednesday2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 550 && mouseX <= 600 && mouseY <= 650 && mouseY >= 650 - thursday2 * 2) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(thursday2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 650 && mouseX <= 700 && mouseY <= 650 && mouseY >= 650 - friday2 * 2) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(friday2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 750 && mouseX <= 800 && mouseY <= 650 && mouseY >= 650 - saturday2 * 2) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(saturday2, mouseX + 85, mouseY + 60);
+      }
+
       if (mouseIsPressed && mouseX >= 50 && mouseX <= 250 && mouseY >= 725 && mouseY <= 775) {
         pg1 = false;
         pg1 = true;
@@ -664,48 +753,6 @@ function draw() {
       if (mouseIsPressed && mouseX >= 700 && mouseX <= 1100 && mouseY >= 725 && mouseY <= 775 && count >= 300) {
         pg1 = false;
         pg1CNC = true;
-      }
-      if (mouseIsPressed && mouseX >= 137 && mouseX <= 212 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1 = false;
-        pg1Su = true;
-      }
-      if (mouseIsPressed && mouseX >= 237 && mouseX <= 312 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1 = false;
-        pg1Mo = true;
-      }
-      if (mouseIsPressed && mouseX >= 337 && mouseX <= 412 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1 = false;
-        pg1Tu = true;
-      }
-      if (mouseIsPressed && mouseX >= 437 && mouseX <= 512 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1 = false;
-        pg1We = true;
-      }
-      if (mouseIsPressed && mouseX >= 537 && mouseX <= 612 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1 = false;
-        pg1Th = true;
-      }
-      if (mouseIsPressed && mouseX >= 637 && mouseX <= 712 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1 = false;
-        pg1Fr = true;
-      }
-      if (mouseIsPressed && mouseX >= 737 && mouseX <= 812 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1 = false;
-        pg1Sa = true;
       }
       if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
         resetValues();
@@ -733,74 +780,250 @@ function draw() {
       noStroke();
       textSize(24);
 
-      fill(sunday2, sunday2 / 4, sunday2 / 4);
-      rect(150, 650, 50, (-sundayC * 2) - sundayNC * 2);
-      fill(sunday2 / 4, sunday2 / 4, sunday2);
-      rect(150, 650, 50, -sundayNC * 2);
-      fill(150, 150, 255);
-      text(sundayNC, 155, 675 - sunday2 * 2 + (sundayC * 2));
-      fill(sunday2, sunday2 / 4, sunday2 / 4);
+
+      // rect(150, 650, 50, -sunday2 * 2);
+      // text(sunday2, 155, 650 - sunday2 * 2);
+      // if(mouseX>=250&&mouseX<=300&&mouseY<=650&&mouseY>=650-monday2*2)
+      //   fill(250,100,100);
+      // else {
+      //   fill(150, 50,50);
+      // }
+
+      //SUNDAY RED
+      if (mouseX >= 150 && mouseX <= 200 && mouseY <= 650 - sundayNC * 2 && mouseY >= (650 - (sunday2 * 2)) - (sundayC * 2))
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(sundayC, 155, 650 - sunday2 * 2);
+      rect(150, 650, 50, (-sundayC * 2) - sundayNC * 2);
 
 
-      fill(monday2, monday2 / 4, monday2 / 4);
-      rect(250, 650, 50, (-mondayC * 2) - mondayNC * 2);
-      fill(monday2 / 4, monday2 / 4, monday2);
-      rect(250, 650, 50, -mondayNC * 2);
-      fill(monday2, monday2 / 4, monday2 / 4);
+      if (mouseX >= 150 && mouseX <= 200 && mouseY <= 650 && mouseY >= 650 - (sunday2 * 2) + (sundayC * 2))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(150, 650, 50, -sundayNC * 2);
+      //SUNDAY BLUE
+      if (mouseX >= 150 && mouseX <= 200 && mouseY <= 650 && mouseY >= 650 - (sunday2 * 2) + (sundayC * 2))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(sundayNC, 155, 675 - sunday2 * 2 + (sundayC * 2));
+
+
+      // fill(150, 150, 255);
+      // text(sundayNC, 155, 675 - sunday2 * 2 + (sundayC * 2));
+      // fill(sunday2, sunday2 / 4, sunday2 / 4);
+      // text(sundayC, 155, 650 - sunday2 * 2);
+
+      //
+      // fill(monday2, monday2 / 4, monday2 / 4);
+      // rect(250, 650, 50, (-mondayC * 2) - mondayNC * 2);
+      // fill(monday2 / 4, monday2 / 4, monday2);
+      // rect(250, 650, 50, -mondayNC * 2);
+      // fill(monday2, monday2 / 4, monday2 / 4);
+      // text(mondayC, 255, 650 - monday2 * 2);
+      // fill(150, 150, 255);
+      // text(mondayNC, 255, 675 - monday2 * 2 + (mondayC * 2));
+
+      //monday RED
+      if (mouseX >= 250 && mouseX <= 300 && mouseY <= 650 - mondayNC * 2 && mouseY >= (650 - (monday2 * 2)) - (mondayC * 2))
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(mondayC, 255, 650 - monday2 * 2);
-      fill(150, 150, 255);
+      rect(250, 650, 50, (-mondayC * 2) - mondayNC * 2);
+
+
+      if (mouseX >= 250 && mouseX <= 300 && mouseY <= 650 && mouseY >= 650 - (monday2 * 2) + (mondayC * 2))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(250, 650, 50, -mondayNC * 2);
+      //monday BLUE
+      if (mouseX >= 250 && mouseX <= 300 && mouseY <= 650 && mouseY >= 650 - (monday2 * 2) + (mondayC * 2))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
       text(mondayNC, 255, 675 - monday2 * 2 + (mondayC * 2));
 
 
-      fill(tuesday2, tuesday2 / 4, tuesday2 / 4);
-      rect(350, 650, 50, (-tuesdayC * 2) - tuesdayNC * 2);
-      fill(tuesday2 / 4, tuesday2 / 4, tuesday2);
-      rect(350, 650, 50, -tuesdayNC * 2);
-      fill(tuesday2, tuesday2 / 4, tuesday2 / 4);
+      // fill(tuesday2, tuesday2 / 4, tuesday2 / 4);
+      // rect(350, 650, 50, (-tuesdayC * 2) - tuesdayNC * 2);
+      // fill(tuesday2 / 4, tuesday2 / 4, tuesday2);
+      // rect(350, 650, 50, -tuesdayNC * 2);
+      // fill(tuesday2, tuesday2 / 4, tuesday2 / 4);
+      // text(tuesdayC, 355, 650 - tuesday2 * 2);
+      // fill(150, 150, 255);
+      // text(tuesdayNC, 355, 675 - tuesday2 * 2 + (tuesdayC * 2));
+
+
+      //tuesday RED
+      if (mouseX >= 350 && mouseX <= 400 && mouseY <= 650 - tuesdayNC * 2 && mouseY >= (650 - (tuesday2 * 2)) - (tuesdayC * 2))
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(tuesdayC, 355, 650 - tuesday2 * 2);
-      fill(150, 150, 255);
+      rect(350, 650, 50, (-tuesdayC * 2) - tuesdayNC * 2);
+
+
+      if (mouseX >= 350 && mouseX <= 400 && mouseY <= 650 && mouseY >= 650 - (tuesday2 * 2) + (tuesdayC * 2))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(350, 650, 50, -tuesdayNC * 2);
+      //tuesday BLUE
+      if (mouseX >= 350 && mouseX <= 400 && mouseY <= 650 && mouseY >= 650 - (tuesday2 * 2) + (tuesdayC * 2))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
       text(tuesdayNC, 355, 675 - tuesday2 * 2 + (tuesdayC * 2));
 
 
-      fill(wednesday2, wednesday2 / 4, wednesday2 / 4);
-      rect(450, 650, 50, (-wednesdayC * 2) - wednesdayNC * 2);
-      fill(wednesday2 / 4, wednesday2 / 4, wednesday2);
-      rect(450, 650, 50, -wednesdayNC * 2);
-      fill(wednesday2, wednesday2 / 4, wednesday2 / 4);
+      // fill(wednesday2, wednesday2 / 4, wednesday2 / 4);
+      // rect(450, 650, 50, (-wednesdayC * 2) - wednesdayNC * 2);
+      // fill(wednesday2 / 4, wednesday2 / 4, wednesday2);
+      // rect(450, 650, 50, -wednesdayNC * 2);
+      // fill(wednesday2, wednesday2 / 4, wednesday2 / 4);
+      // text(wednesdayC, 455, 650 - wednesday2 * 2);
+      // fill(150, 150, 255);
+      // text(wednesdayNC, 455, 675 - wednesday2 * 2 + (wednesdayC * 2));
+
+      //wednesday RED
+      if (mouseX >= 450 && mouseX <= 500 && mouseY <= 650 - wednesdayNC * 2 && mouseY >= (650 - (wednesday2 * 2)) - (wednesdayC * 2))
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(wednesdayC, 455, 650 - wednesday2 * 2);
-      fill(150, 150, 255);
+      rect(450, 650, 50, (-wednesdayC * 2) - wednesdayNC * 2);
+
+
+      if (mouseX >= 450 && mouseX <= 500 && mouseY <= 650 && mouseY >= 650 - (wednesday2 * 2) + (wednesdayC * 2))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(450, 650, 50, -wednesdayNC * 2);
+      //wednesday BLUE
+      if (mouseX >= 450 && mouseX <= 500 && mouseY <= 650 && mouseY >= 650 - (wednesday2 * 2) + (wednesdayC * 2))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
       text(wednesdayNC, 455, 675 - wednesday2 * 2 + (wednesdayC * 2));
 
 
-      fill(thursday2, thursday2 / 4, thursday2 / 4);
-      rect(550, 650, 50, (-thursdayC * 2) - thursdayNC * 2);
-      fill(thursday2 / 4, thursday2 / 4, thursday2);
-      rect(550, 650, 50, -thursdayNC * 2);
+      // fill(thursday2, thursday2 / 4, thursday2 / 4);
+      // rect(550, 650, 50, (-thursdayC * 2) - thursdayNC * 2);
+      // fill(thursday2 / 4, thursday2 / 4, thursday2);
+      // rect(550, 650, 50, -thursdayNC * 2);
+      //
+      // fill(thursday2, thursday2 / 4, thursday2 / 4);
+      // text(thursdayC, 555, 650 - thursday2 * 2);
+      // fill(150, 150, 255);
+      // text(thursdayNC, 555, 675 - thursday2 * 2 + (thursdayC * 2));
 
-      fill(thursday2, thursday2 / 4, thursday2 / 4);
+
+      //thursday RED
+      if (mouseX >= 550 && mouseX <= 600 && mouseY <= 650 - thursdayNC * 2 && mouseY >= (650 - (thursday2 * 2)) - (thursdayC * 2))
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(thursdayC, 555, 650 - thursday2 * 2);
-      fill(150, 150, 255);
+      rect(550, 650, 50, (-thursdayC * 2) - thursdayNC * 2);
+
+
+      if (mouseX >= 550 && mouseX <= 600 && mouseY <= 650 && mouseY >= 650 - (thursday2 * 2) + (thursdayC * 2))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(550, 650, 50, -thursdayNC * 2);
+      //thursday BLUE
+      if (mouseX >= 550 && mouseX <= 600 && mouseY <= 650 && mouseY >= 650 - (thursday2 * 2) + (thursdayC * 2))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
       text(thursdayNC, 555, 675 - thursday2 * 2 + (thursdayC * 2));
 
 
-      fill(friday2, friday2 / 4, friday2 / 4);
-      rect(650, 650, 50, (-fridayC * 2) - fridayNC * 2);
-      fill(friday2 / 4, friday2 / 4, friday2);
-      rect(650, 650, 50, -fridayNC * 2);
-      fill(friday2, friday2 / 4, friday2 / 4);
+      // fill(friday2, friday2 / 4, friday2 / 4);
+      // rect(650, 650, 50, (-fridayC * 2) - fridayNC * 2);
+      // fill(friday2 / 4, friday2 / 4, friday2);
+      // rect(650, 650, 50, -fridayNC * 2);
+      // fill(friday2, friday2 / 4, friday2 / 4);
+      // text(fridayC, 655, 650 - friday2 * 2);
+      // fill(150, 150, 255);
+      // text(fridayNC, 655, 675 - friday2 * 2 + (fridayC * 2));
+
+      //friday RED
+      if (mouseX >= 650 && mouseX <= 700 && mouseY <= 650 - fridayNC * 2 && mouseY >= (650 - (friday2 * 2)) - (fridayC * 2))
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(fridayC, 655, 650 - friday2 * 2);
-      fill(150, 150, 255);
+      rect(650, 650, 50, (-fridayC * 2) - fridayNC * 2);
+
+
+      if (mouseX >= 650 && mouseX <= 700 && mouseY <= 650 && mouseY >= 650 - (friday2 * 2) + (fridayC * 2))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(650, 650, 50, -fridayNC * 2);
+      //friday BLUE
+      if (mouseX >= 650 && mouseX <= 700 && mouseY <= 650 && mouseY >= 650 - (friday2 * 2) + (fridayC * 2))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
       text(fridayNC, 655, 675 - friday2 * 2 + (fridayC * 2));
 
-      fill(saturday2, saturday2 / 4, saturday2 / 4);
-      rect(750, 650, 50, (-saturdayC * 2) - saturdayNC * 2);
-      fill(saturday2 / 4, saturday2 / 4, saturday2);
-      rect(750, 650, 50, -saturdayNC * 2);
+      // fill(saturday2, saturday2 / 4, saturday2 / 4);
+      // rect(750, 650, 50, (-saturdayC * 2) - saturdayNC * 2);
+      // fill(saturday2 / 4, saturday2 / 4, saturday2);
+      // rect(750, 650, 50, -saturdayNC * 2);
+      //
+      // fill(saturday2, saturday2 / 4, saturday2 / 4);
+      // text(saturdayC, 755, 650 - saturday2 * 2);
+      // fill(150, 150, 255);
+      // text(saturdayNC, 755, 675 - saturday2 * 2 + (saturdayC * 2));
 
-      fill(saturday2, saturday2 / 4, saturday2 / 4);
+      //saturday RED
+      if (mouseX >= 750 && mouseX <= 800 && mouseY <= 650 - saturdayNC * 2 && mouseY >= (650 - (saturday2 * 2)) - (saturdayC * 2))
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(saturdayC, 755, 650 - saturday2 * 2);
-      fill(150, 150, 255);
+      rect(750, 650, 50, (-saturdayC * 2) - saturdayNC * 2);
+
+
+      if (mouseX >= 750 && mouseX <= 800 && mouseY <= 650 && mouseY >= 650 - (saturday2 * 2) + (saturdayC * 2))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(750, 650, 50, -saturdayNC * 2);
+      //saturday BLUE
+      if (mouseX >= 750 && mouseX <= 800 && mouseY <= 650 && mouseY >= 650 - (saturday2 * 2) + (saturdayC * 2))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
       text(saturdayNC, 755, 675 - saturday2 * 2 + (saturdayC * 2));
 
       fill(0);
@@ -839,7 +1062,7 @@ function draw() {
       textSize(40);
       text("Sa", 752, 665);
       ellipse(60, 60, 100, 100);
-      fill(0);
+      fill(255);
       textSize(40);
       text("Day of the week", 300, 750);
       push();
@@ -853,56 +1076,133 @@ function draw() {
       fill(0);
       text("Total", 70, 760);
       text("Violent/Non-Violent", 710, 760);
-      if (mouseIsPressed && mouseX >= 50 && mouseX <= 250 && mouseY >= 725 && mouseY <= 775) {
-        pg1CNC = false;
-        pg1 = true;
+
+
+      if (mouseX >= 150 && mouseX <= 200 && mouseY <= 650 - sundayNC * 2 && mouseY >= (650 - (sunday2 * 2)) - (sundayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(sundayC, mouseX + 85, mouseY + 60);
       }
+      if (mouseX >= 150 && mouseX <= 200 && mouseY <= 650 && mouseY >= 650 - (sunday2 * 2) + (sundayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(sundayNC, mouseX + 85, mouseY + 60);
+      }
+
+      if (mouseX >= 250 && mouseX <= 300 && mouseY <= 650 - mondayNC * 2 && mouseY >= (650 - (monday2 * 2)) - (mondayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(mondayC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 250 && mouseX <= 300 && mouseY <= 650 && mouseY >= 650 - (monday2 * 2) + (mondayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(mondayNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 350 && mouseX <= 400 && mouseY <= 650 - tuesdayNC * 2 && mouseY >= (650 - (tuesday2 * 2)) - (tuesdayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(tuesdayC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 350 && mouseX <= 400 && mouseY <= 650 && mouseY >= 650 - (tuesday2 * 2) + (tuesdayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(tuesdayNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 450 && mouseX <= 500 && mouseY <= 650 - wednesdayNC * 2 && mouseY >= (650 - (wednesday2 * 2)) - (wednesdayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(wednesdayC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 450 && mouseX <= 500 && mouseY <= 650 && mouseY >= 650 - (wednesday2 * 2) + (wednesdayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(wednesdayNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 550 && mouseX <= 600 && mouseY <= 650 - thursdayNC * 2 && mouseY >= (650 - (thursday2 * 2)) - (thursdayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(thursdayC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 550 && mouseX <= 600 && mouseY <= 650 && mouseY >= 650 - (thursday2 * 2) + (thursdayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(thursdayNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 650 && mouseX <= 700 && mouseY <= 650 - fridayNC * 2 && mouseY >= (650 - (friday2 * 2)) - (fridayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fridayC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 650 && mouseX <= 700 && mouseY <= 650 && mouseY >= 650 - (friday2 * 2) + (fridayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fridayNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 750 && mouseX <= 800 && mouseY <= 650 - saturdayNC * 2 && mouseY >= (650 - (saturday2 * 2)) - (saturdayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(saturdayC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 750 && mouseX <= 800 && mouseY <= 650 && mouseY >= 650 - (saturday2 * 2) + (saturdayC * 2)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(saturdayNC, mouseX + 85, mouseY + 60);
+      }
+
+
+
       // if (mouseIsPressed && mouseX >= 700 && mouseX <= 1100 && mouseY >= 725 && mouseY <= 775) {
       //   pg1CNC = false;
       //   pg1CNC = true;
       // }
-      if (mouseIsPressed && mouseX >= 137 && mouseX <= 212 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
+      if (mouseIsPressed && mouseX >= 50 && mouseX <= 250 && mouseY >= 725 && mouseY <= 775){
         pg1CNC = false;
-        pg1Su = true;
+        pg1 = true;
       }
-      if (mouseIsPressed && mouseX >= 237 && mouseX <= 312 && mouseY >= 613 && mouseY <= 688) {
 
-        resetValues();
-        pg1CNC = false;
-        pg1Mo = true;
-      }
-      if (mouseIsPressed && mouseX >= 337 && mouseX <= 412 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1CNC = false;
-        pg1Tu = true;
-      }
-      if (mouseIsPressed && mouseX >= 437 && mouseX <= 512 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1CNC = false;
-        pg1We = true;
-      }
-      if (mouseIsPressed && mouseX >= 537 && mouseX <= 612 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1CNC = false;
-        pg1Th = true;
-      }
-      if (mouseIsPressed && mouseX >= 637 && mouseX <= 712 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1CNC = false;
-        pg1Fr = true;
-      }
-      if (mouseIsPressed && mouseX >= 737 && mouseX <= 812 && mouseY >= 613 && mouseY <= 688) {
-
-        resetValues();
-        pg1CNC = false;
-        pg1Sa = true;
-      }
       if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
 
         resetValues();
@@ -910,470 +1210,6 @@ function draw() {
         pg0 = true;
       }
     }
-
-    if (pg1Su) {
-      background(98, 101, 127);
-      image(badge, 275, 0);
-      noStroke();
-
-      fill(0);
-      ellipse(175, sundayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Su", 152, sundayA + 15);
-      fill(150);
-      ellipse(275, mondayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Mo", 252, mondayA + 15);
-      fill(150);
-      ellipse(375, tuesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Tu", 352, tuesdayA + 15);
-      fill(150);
-      ellipse(475, wednesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("We", 448, wednesdayA + 15);
-      fill(150);
-      ellipse(575, thursdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Th", 552, thursdayA + 15);
-      fill(150);
-      ellipse(675, fridayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Fr", 652, fridayA + 15);
-      fill(150);
-      ellipse(775, saturdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Sa", 752, saturdayA + 15);
-      if (sundayA >= 150)
-        sundayA -= 10;
-      if (mondayA >= 50 && count > 45)
-        mondayA -= 10;
-      if (tuesdayA >= 50 && count > 60)
-        tuesdayA -= 10;
-      if (wednesdayA >= 50 && count > 75)
-        wednesdayA -= 10;
-      if (thursdayA >= 50 && count > 90)
-        thursdayA -= 10;
-      if (fridayA >= 50 && count > 105)
-        fridayA -= 10;
-      if (saturdayA >= 50 && count > 120)
-        saturdayA -= 10;
-      count++;
-      //  ellipse(60, 60, 100, 100);
-      //   if(mouseIsPressed){
-      //   text(mouseX, 600,600);
-      //   text(mouseY, 600,700);
-      // }
-      if (mouseIsPressed && mouseX >= 137 && mouseX <= 212 && mouseY >= 100 && mouseY <= 175) {
-        resetValues();
-        pg1Su = false;
-        pg1 = true;
-      }
-    }
-    if (pg1Mo) {
-      background(98, 101, 127);
-      image(badge, 275, 0);
-      noStroke();
-
-      fill(150);
-      ellipse(175, sundayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Su", 152, sundayA + 15);
-      fill(0);
-      ellipse(275, mondayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Mo", 252, mondayA + 15);
-      fill(150);
-      ellipse(375, tuesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Tu", 352, tuesdayA + 15);
-      fill(150);
-      ellipse(475, wednesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("We", 448, wednesdayA + 15);
-      fill(150);
-      ellipse(575, thursdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Th", 552, thursdayA + 15);
-      fill(150);
-      ellipse(675, fridayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Fr", 652, fridayA + 15);
-      fill(150);
-      ellipse(775, saturdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Sa", 752, saturdayA + 15);
-      if (sundayA >= 50 && count > 45)
-        sundayA -= 10;
-      if (mondayA >= 150)
-        mondayA -= 10;
-      if (tuesdayA >= 50 && count > 45)
-        tuesdayA -= 10;
-      if (wednesdayA >= 50 && count > 60)
-        wednesdayA -= 10;
-      if (thursdayA >= 50 && count > 75)
-        thursdayA -= 10;
-      if (fridayA >= 50 && count > 90)
-        fridayA -= 10;
-      if (saturdayA >= 50 && count > 105)
-        saturdayA -= 10;
-      count++;
-      //  ellipse(60, 60, 100, 100);
-      //   if(mouseIsPressed){
-      //   text(mouseX, 600,600);
-      //   text(mouseY, 600,700);
-      // }
-      if (mouseIsPressed && mouseX >= 237 && mouseX <= 312 && mouseY >= 100 && mouseY <= 175) {
-        resetValues();
-        pg1Mo = false;
-        pg1 = true;
-      }
-    }
-    if (pg1Tu) {
-      background(98, 101, 127);
-      image(badge, 275, 0);
-      noStroke();
-
-      fill(150);
-      ellipse(175, sundayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Su", 152, sundayA + 15);
-      fill(150);
-      ellipse(275, mondayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Mo", 252, mondayA + 15);
-      fill(0);
-      ellipse(375, tuesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Tu", 352, tuesdayA + 15);
-      fill(150);
-      ellipse(475, wednesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("We", 448, wednesdayA + 15);
-      fill(150);
-      ellipse(575, thursdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Th", 552, thursdayA + 15);
-      fill(150);
-      ellipse(675, fridayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Fr", 652, fridayA + 15);
-      fill(150);
-      ellipse(775, saturdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Sa", 752, saturdayA + 15);
-      if (sundayA >= 50 && count > 60)
-        sundayA -= 10;
-      if (mondayA >= 50 && count > 45)
-        mondayA -= 10;
-      if (tuesdayA >= 150)
-        tuesdayA -= 10;
-      if (wednesdayA >= 50 && count > 45)
-        wednesdayA -= 10;
-      if (thursdayA >= 50 && count > 60)
-        thursdayA -= 10;
-      if (fridayA >= 50 && count > 75)
-        fridayA -= 10;
-      if (saturdayA >= 50 && count > 90)
-        saturdayA -= 10;
-      count++;
-      //  ellipse(60, 60, 100, 100);
-      //   if(mouseIsPressed){
-      //   text(mouseX, 600,600);
-      //   text(mouseY, 600,700);
-      // }
-      if (mouseIsPressed && mouseX >= 337 && mouseX <= 412 && mouseY >= 100 && mouseY <= 175) {
-        resetValues();
-        pg1Tu = false;
-        pg1 = true;
-      }
-    }
-    if (pg1We) {
-      background(98, 101, 127);
-      image(badge, 275, 0);
-      noStroke();
-
-      fill(150);
-      ellipse(175, sundayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Su", 152, sundayA + 15);
-      fill(150);
-      ellipse(275, mondayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Mo", 252, mondayA + 15);
-      fill(150);
-      ellipse(375, tuesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Tu", 352, tuesdayA + 15);
-      fill(0);
-      ellipse(475, wednesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("We", 448, wednesdayA + 15);
-      fill(150);
-      ellipse(575, thursdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Th", 552, thursdayA + 15);
-      fill(150);
-      ellipse(675, fridayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Fr", 652, fridayA + 15);
-      fill(150);
-      ellipse(775, saturdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Sa", 752, saturdayA + 15);
-      if (sundayA >= 50 && count > 75)
-        sundayA -= 10;
-      if (mondayA >= 50 && count > 60)
-        mondayA -= 10;
-      if (tuesdayA >= 50 && count > 45)
-        tuesdayA -= 10;
-      if (wednesdayA >= 150)
-        wednesdayA -= 10;
-      if (thursdayA >= 50 && count > 45)
-        thursdayA -= 10;
-      if (fridayA >= 50 && count > 60)
-        fridayA -= 10;
-      if (saturdayA >= 50 && count > 75)
-        saturdayA -= 10;
-      count++;
-      //  ellipse(60, 60, 100, 100);
-      //   if(mouseIsPressed){
-      //   text(mouseX, 600,600);
-      //   text(mouseY, 600,700);
-      // }
-      if (mouseIsPressed && mouseX >= 437 && mouseX <= 512 && mouseY >= 100 && mouseY <= 175) {
-        resetValues();
-        pg1We = false;
-        pg1 = true;
-      }
-    }
-    if (pg1Th) {
-      background(98, 101, 127);
-      image(badge, 275, 0);
-      noStroke();
-
-      fill(150);
-      ellipse(175, sundayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Su", 152, sundayA + 15);
-      fill(150);
-      ellipse(275, mondayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Mo", 252, mondayA + 15);
-      fill(150);
-      ellipse(375, tuesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Tu", 352, tuesdayA + 15);
-      fill(150);
-      ellipse(475, wednesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("We", 448, wednesdayA + 15);
-      fill(0);
-      ellipse(575, thursdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Th", 552, thursdayA + 15);
-      fill(150);
-      ellipse(675, fridayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Fr", 652, fridayA + 15);
-      fill(150);
-      ellipse(775, saturdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Sa", 752, saturdayA + 15);
-      if (sundayA >= 50 && count > 90)
-        sundayA -= 10;
-      if (mondayA >= 50 && count > 75)
-        mondayA -= 10;
-      if (tuesdayA >= 50 && count > 60)
-        tuesdayA -= 10;
-      if (wednesdayA >= 50 && count > 45)
-        wednesdayA -= 10;
-      if (thursdayA >= 150)
-        thursdayA -= 10;
-      if (fridayA >= 50 && count > 45)
-        fridayA -= 10;
-      if (saturdayA >= 50 && count > 60)
-        saturdayA -= 10;
-      count++;
-      //  ellipse(60, 60, 100, 100);
-      //   if(mouseIsPressed){
-      //   text(mouseX, 600,600);
-      //   text(mouseY, 600,700);
-      // }
-      if (mouseIsPressed && mouseX >= 537 && mouseX <= 612 && mouseY >= 100 && mouseY <= 175) {
-        resetValues();
-        pg1Th = false;
-        pg1 = true;
-      }
-    }
-    if (pg1Fr) {
-      background(98, 101, 127);
-      image(badge, 275, 0);
-      noStroke();
-
-      fill(150);
-      ellipse(175, sundayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Su", 152, sundayA + 15);
-      fill(150);
-      ellipse(275, mondayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Mo", 252, mondayA + 15);
-      fill(150);
-      ellipse(375, tuesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Tu", 352, tuesdayA + 15);
-      fill(150);
-      ellipse(475, wednesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("We", 448, wednesdayA + 15);
-      fill(150);
-      ellipse(575, thursdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Th", 552, thursdayA + 15);
-      fill(0);
-      ellipse(675, fridayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Fr", 652, fridayA + 15);
-      fill(150);
-      ellipse(775, saturdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Sa", 752, saturdayA + 15);
-      if (sundayA >= 50 && count > 105)
-        sundayA -= 10;
-      if (mondayA >= 50 && count > 90)
-        mondayA -= 10;
-      if (tuesdayA >= 50 && count > 75)
-        tuesdayA -= 10;
-      if (wednesdayA >= 50 && count > 60)
-        wednesdayA -= 10;
-      if (thursdayA >= 50 && count > 45)
-        thursdayA -= 10;
-      if (fridayA >= 150)
-        fridayA -= 10;
-      if (saturdayA >= 50 && count > 45)
-        saturdayA -= 10;
-      count++;
-      //  ellipse(60, 60, 100, 100);
-      //   if(mouseIsPressed){
-      //   text(mouseX, 600,600);
-      //   text(mouseY, 600,700);
-      // }
-      if (mouseIsPressed && mouseX >= 637 && mouseX <= 712 && mouseY >= 100 && mouseY <= 175) {
-        resetValues();
-        pg1Fr = false;
-        pg1 = true;
-      }
-    }
-    if (pg1Sa) {
-      background(98, 101, 127);
-      image(badge, 275, 0);
-      noStroke();
-
-      fill(150);
-      ellipse(175, sundayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Su", 152, sundayA + 15);
-      fill(150);
-      ellipse(275, mondayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Mo", 252, mondayA + 15);
-      fill(150);
-      ellipse(375, tuesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Tu", 352, tuesdayA + 15);
-      fill(150);
-      ellipse(475, wednesdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("We", 448, wednesdayA + 15);
-      fill(150);
-      ellipse(575, thursdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Th", 552, thursdayA + 15);
-      fill(150);
-      ellipse(675, fridayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Fr", 652, fridayA + 15);
-      fill(0);
-      ellipse(775, saturdayA, 75, 75);
-      fill(255);
-      textSize(40);
-      text("Sa", 752, saturdayA + 15);
-      if (sundayA >= 50 && count > 120)
-        sundayA -= 10;
-      if (mondayA >= 50 && count > 105)
-        mondayA -= 10;
-      if (tuesdayA >= 50 && count > 90)
-        tuesdayA -= 10;
-      if (wednesdayA >= 50 && count > 75)
-        wednesdayA -= 10;
-      if (thursdayA >= 50 && count > 60)
-        thursdayA -= 10;
-      if (fridayA >= 50 && count > 45)
-        fridayA -= 10;
-      if (saturdayA >= 150)
-        saturdayA -= 10;
-      count++;
-      //  ellipse(60, 60, 100, 100);
-      //   if(mouseIsPressed){
-      //   text(mouseX, 600,600);
-      //   text(mouseY, 600,700);
-      // }
-      if (mouseIsPressed && mouseX >= 737 && mouseX <= 812 && mouseY >= 100 && mouseY <= 175) {
-        resetValues();
-        pg1Sa = false;
-        pg1 = true;
-      }
-    }
-
     if (pg2) {
       background(98, 101, 127);
       image(badge, 275, 0);
@@ -1626,7 +1462,7 @@ function draw() {
       text("23", 1207, 455);
       fill(255);
       ellipse(60, 60, 100, 100);
-      fill(0);
+      fill(255);
       textSize(40);
       text("Time of day (every hour)", 360, 520);
       push();
@@ -2041,7 +1877,7 @@ function draw() {
       text("23", 1207, 455);
       fill(255);
       ellipse(60, 60, 100, 100);
-      fill(0);
+      fill(255);
       textSize(40);
       text("Time of day (every hour)", 360, 520);
       push();
