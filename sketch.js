@@ -15,6 +15,7 @@ var count;
 var mapImg;
 var smallLo = 180;
 var largeLo = -180;
+var arrow;
 
 var smallLa = 180;
 var largeLa = -180;
@@ -22,6 +23,7 @@ var largeLa = -180;
 function preload() {
   badge = loadImage("badge-01.png");
   mapImg = loadImage("Map.png");
+  arrow = loadImage("badge-02.png");
 }
 
 function setup() {
@@ -544,7 +546,16 @@ function draw() {
       background(98, 101, 127);
       image(badge, 275, 0);
       //  rect(100, 100, 1000, 700);
-      image(mapImg, 445 - 500, 380 - 500, 1400, 1400);
+      image(mapImg, 445 - 430, 380 - 500, 1632,1400);
+      fill(0);
+      rect(20,190,400,120);
+      fill(255);
+      text("Violent incidents:", 40,230);
+      text("Non-Violent incidents:",40,280);
+      fill(255, 50, 50);
+      ellipse(390,220,30,30);
+      fill(50, 50, 255);
+      ellipse(390,270,30,30);
       // fill(0);
       // text(mouseX, 900, 100);
       // text(mouseY, 200, 100);
@@ -554,11 +565,11 @@ function draw() {
         } else {
           fill(50, 50, 255);
         }
-        ellipse(map(latitude[i], smallLa, largeLa, 310, 1100, true), map(longitude[i], smallLo, largeLo, 110, 910, true), 10, 10);
+        ellipse(map(latitude[i], smallLa, largeLa, 510, 1442, true), map(longitude[i], smallLo, largeLo, 110, 910, true), 10, 10);
       }
-
-      fill(255);
-      ellipse(60, 60, 100, 100);
+      // fill(255);
+      // image(arrow,15,15);
+      image(arrow,15,15);
       if (mouseIsPressed && mouseX >= 10 && mouseX <= 110 && mouseY >= 10 && mouseY <= 110) {
         resetValues();
         pgM = false;
@@ -672,7 +683,7 @@ function draw() {
       fill(255);
       textSize(40);
       text("Sa", 752, 665);
-      ellipse(60, 60, 100, 100);
+      image(arrow,15,15);
       fill(255);
       textSize(40);
       text("Day of the week", 300, 750);
@@ -1061,7 +1072,7 @@ function draw() {
       fill(255);
       textSize(40);
       text("Sa", 752, 665);
-      ellipse(60, 60, 100, 100);
+      image(arrow,15,15);
       fill(255);
       textSize(40);
       text("Day of the week", 300, 750);
@@ -1561,7 +1572,7 @@ function draw() {
       textSize(20);
       text("23", 1207, 455);
       fill(255);
-      ellipse(60, 60, 100, 100);
+      image(arrow,15,15);
       fill(255);
       textSize(40);
       text("Time of day (every hour)", 360, 520);
@@ -2721,7 +2732,7 @@ function draw() {
       textSize(20);
       text("23", 1207, 455);
       fill(255);
-      ellipse(60, 60, 100, 100);
+      image(arrow,15,15);
       fill(255);
       textSize(40);
       text("Time of day (every hour)", 360, 520);
