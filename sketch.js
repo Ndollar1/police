@@ -750,7 +750,7 @@ function draw() {
         pg1 = false;
         pg1 = true;
       }
-      if (mouseIsPressed && mouseX >= 700 && mouseX <= 1100 && mouseY >= 725 && mouseY <= 775 && count >= 300) {
+      if (mouseIsPressed && mouseX >= 700 && mouseX <= 1100 && mouseY >= 725 && mouseY <= 775) {
         pg1 = false;
         pg1CNC = true;
       }
@@ -1198,7 +1198,7 @@ function draw() {
       //   pg1CNC = false;
       //   pg1CNC = true;
       // }
-      if (mouseIsPressed && mouseX >= 50 && mouseX <= 250 && mouseY >= 725 && mouseY <= 775){
+      if (mouseIsPressed && mouseX >= 50 && mouseX <= 250 && mouseY >= 725 && mouseY <= 775) {
         pg1CNC = false;
         pg1 = true;
       }
@@ -1263,79 +1263,179 @@ function draw() {
         twentythree2++;
       noStroke();
       textSize(20);
-      fill(zero2, zero2 / 4, zero2 / 4);
+      if (mouseX >= 50 && mouseX <= 90 && mouseY <= 450 && mouseY >= 450 - zero2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(50, 450, 40, -zero2 * 4);
       text(zero2, 50, 450 - zero2 * 4);
-      fill(one2, one2 / 4, one2 / 4);
+
+      if (mouseX >= 100 && mouseX <= 140 && mouseY <= 450 && mouseY >= 450 - one2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(100, 450, 40, -one2 * 4);
       text(one2, 100, 450 - one2 * 4);
-      fill(two2, two2 / 4, two2 / 4);
+
+      if (mouseX >= 150 && mouseX <= 190 && mouseY <= 450 && mouseY >= 450 - two2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(150, 450, 40, -two2 * 4);
       text(two2, 150, 450 - two2 * 4);
-      fill(three2, three2 / 4, three2 / 4);
+
+      if (mouseX >= 200 && mouseX <= 240 && mouseY <= 450 && mouseY >= 450 - three2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(200, 450, 40, -three2 * 4);
       text(three2, 200, 450 - three2 * 4);
-      fill(four2, four2 / 4, four2 / 4);
+
+      if (mouseX >= 250 && mouseX <= 290 && mouseY <= 450 && mouseY >= 450 - four2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(250, 450, 40, -four2 * 4);
       text(four2, 250, 450 - four2 * 4);
-      fill(five2, five2 / 4, five2 / 4);
+      if (mouseX >= 300 && mouseX <= 340 && mouseY <= 450 && mouseY >= 450 - five2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(300, 450, 40, -five2 * 4);
       text(five2, 300, 450 - five2 * 4);
-      fill(six2, six2 / 4, six2 / 4);
+      if (mouseX >= 350 && mouseX <= 390 && mouseY <= 450 && mouseY >= 450 - six2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(350, 450, 40, -six2 * 4);
       text(six2, 350, 450 - six2 * 4);
-      fill(seven2, seven2 / 4, seven2 / 4);
+      if (mouseX >= 400 && mouseX <= 440 && mouseY <= 450 && mouseY >= 450 - seven2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(400, 450, 40, -seven2 * 4);
       text(seven2, 400, 450 - seven2 * 4);
-      fill(eight2, eight2 / 4, eight2 / 4);
+      if (mouseX >= 450 && mouseX <= 490 && mouseY <= 450 && mouseY >= 450 - eight2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(450, 450, 40, -eight2 * 4);
       text(eight2, 450, 450 - eight2 * 4);
-      fill(nine2, nine2 / 4, nine2 / 4);
+      if (mouseX >= 500 && mouseX <= 540 && mouseY <= 450 && mouseY >= 450 - nine2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(500, 450, 40, -nine2 * 4);
       text(nine2, 500, 450 - nine2 * 4);
-      fill(ten2, ten2 / 4, ten2 / 4);
+      if (mouseX >= 550 && mouseX <= 590 && mouseY <= 450 && mouseY >= 450 - ten2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(550, 450, 40, -ten2 * 4);
       text(ten2, 550, 450 - ten2 * 4);
-      fill(eleven2, eleven2 / 4, eleven2 / 4);
+      if (mouseX >= 600 && mouseX <= 640 && mouseY <= 450 && mouseY >= 450 - eleven2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(600, 450, 40, -eleven2 * 4);
       text(eleven2, 600, 450 - eleven2 * 4);
-      fill(twelve2, twelve2 / 4, twelve2 / 4);
+      if (mouseX >= 650 && mouseX <= 690 && mouseY <= 450 && mouseY >= 450 - twelve2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(650, 450, 40, -twelve2 * 4);
       text(twelve2, 650, 450 - twelve2 * 4);
-      fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
+      if (mouseX >= 700 && mouseX <= 740 && mouseY <= 450 && mouseY >= 450 - thirteen2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(700, 450, 40, -thirteen2 * 4);
       text(thirteen2, 700, 450 - thirteen2 * 4);
-      fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
+      if (mouseX >= 750 && mouseX <= 790 && mouseY <= 450 && mouseY >= 450 - fourteen2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(750, 450, 40, -fourteen2 * 4);
       text(fourteen2, 750, 450 - fourteen2 * 4);
-      fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
+      if (mouseX >= 800 && mouseX <= 840 && mouseY <= 450 && mouseY >= 450 - fifteen2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(800, 450, 40, -fifteen2 * 4);
       text(fifteen2, 800, 450 - fifteen2 * 4);
-      fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
+      if (mouseX >= 850 && mouseX <= 890 && mouseY <= 450 && mouseY >= 450 - sixteen2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(850, 450, 40, -sixteen2 * 4);
       text(sixteen2, 850, 450 - sixteen2 * 4);
-      fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
+      if (mouseX >= 900 && mouseX <= 940 && mouseY <= 450 && mouseY >= 450 - seventeen2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(900, 450, 40, -seventeen2 * 4);
       text(seventeen2, 900, 450 - seventeen2 * 4);
-      fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
+      if (mouseX >= 950 && mouseX <= 990 && mouseY <= 450 && mouseY >= 450 - eighteen2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(950, 450, 40, -eighteen2 * 4);
       text(eighteen2, 950, 450 - eighteen2 * 4);
-      fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
+      if (mouseX >= 1000 && mouseX <= 1040 && mouseY <= 450 && mouseY >= 450 - nineteen2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(1000, 450, 40, -nineteen2 * 4);
       text(nineteen2, 1000, 450 - nineteen2 * 4);
-      fill(twenty2, twenty2 / 4, twenty2 / 4);
+      if (mouseX >= 1050 && mouseX <= 1090 && mouseY <= 450 && mouseY >= 450 - twenty2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(1050, 450, 40, -twenty2 * 4);
       text(twenty2, 1050, 450 - twenty2 * 4);
 
-      fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
+      if (mouseX >= 1100 && mouseX <= 1140 && mouseY <= 450 && mouseY >= 450 - twentyone2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(1100, 450, 40, -twentyone2 * 4);
       text(twentyone2, 1100, 450 - twentyone2 * 4);
 
-      fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
+      if (mouseX >= 1150 && mouseX <= 1190 && mouseY <= 450 && mouseY >= 450 - twentytwo2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(1150, 450, 40, -twentytwo2 * 4);
       text(twentytwo2, 1150, 450 - twentytwo2 * 4);
 
-      fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
+      if (mouseX >= 1200 && mouseX <= 1240 && mouseY <= 450 && mouseY >= 450 - twentythree2 * 4)
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       rect(1200, 450, 40, -twentythree2 * 4);
       text(twentythree2, 1200, 450 - twentythree2 * 4);
 
@@ -1476,6 +1576,201 @@ function draw() {
       fill(0);
       text("Total", 70, 540);
       text("Violent/Non-Violent", 910, 535);
+
+      if (mouseX >= 50 && mouseX <= 90 && mouseY <= 450 && mouseY >= 450 - zero2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(zero2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 100 && mouseX <= 140 && mouseY <= 450 && mouseY >= 450 - one2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(one2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 150 && mouseX <= 190 && mouseY <= 450 && mouseY >= 450 - two2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(two2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 200 && mouseX <= 240 && mouseY <= 450 && mouseY >= 450 - three2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(three2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 250 && mouseX <= 290 && mouseY <= 450 && mouseY >= 450 - four2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(four2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 300 && mouseX <= 340 && mouseY <= 450 && mouseY >= 450 - five2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(five2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 350 && mouseX <= 390 && mouseY <= 450 && mouseY >= 450 - six2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(six2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 400 && mouseX <= 440 && mouseY <= 450 && mouseY >= 450 - seven2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(seven2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 450 && mouseX <= 490 && mouseY <= 450 && mouseY >= 450 - eight2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(eight2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 500 && mouseX <= 540 && mouseY <= 450 && mouseY >= 450 - nine2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(nine2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 550 && mouseX <= 590 && mouseY <= 450 && mouseY >= 450 - ten2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(ten2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 600 && mouseX <= 640 && mouseY <= 450 && mouseY >= 450 - eleven2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(eleven2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 650 && mouseX <= 690 && mouseY <= 450 && mouseY >= 450 - twelve2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(twelve2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 700 && mouseX <= 740 && mouseY <= 450 && mouseY >= 450 - thirteen2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(thirteen2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 750 && mouseX <= 790 && mouseY <= 450 && mouseY >= 450 - fourteen2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(fourteen2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 800 && mouseX <= 840 && mouseY <= 450 && mouseY >= 450 - fifteen2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(fifteen2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 850 && mouseX <= 890 && mouseY <= 450 && mouseY >= 450 - sixteen2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(sixteen2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 900 && mouseX <= 940 && mouseY <= 450 && mouseY >= 450 - seventeen2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(seventeen2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 950 && mouseX <= 990 && mouseY <= 450 && mouseY >= 450 - eighteen2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(eighteen2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1000 && mouseX <= 1040 && mouseY <= 450 && mouseY >= 450 - nineteen2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(nineteen2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1050 && mouseX <= 1090 && mouseY <= 450 && mouseY >= 450 - twenty2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(twenty2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1100 && mouseX <= 1140 && mouseY <= 450 && mouseY >= 450 - twentyone2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(twentyone2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1150 && mouseX <= 1190 && mouseY <= 450 && mouseY >= 450 - twentytwo2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(twentytwo2, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1200 && mouseX <= 1240 && mouseY <= 450 && mouseY >= 450 - twentythree2 * 4) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 200, 75);
+        fill(255);
+        text("Total incidents:", mouseX + 15, mouseY + 30);
+        text(twentythree2, mouseX + 85, mouseY + 60);
+      }
+
+
       if (mouseIsPressed && mouseX >= 900 && mouseX <= 1300 && mouseY >= 500 && mouseY <= 550) {
         pg2CNC = true;
         pg2 = false;
@@ -1538,221 +1833,771 @@ function draw() {
         twentythree2++;
       noStroke();
       textSize(20);
-      fill(zero2, zero2 / 4, zero2 / 4);
-      rect(50, 450, 40, (-zeroC * 4) - zeroNC * 4);
-      fill(zero2 / 4, zero2 / 4, zero2);
-      rect(50, 450, 40, -zeroNC * 4);
-      fill(150, 150, 255);
-      text(zeroNC, 50, 465 - zero2 * 4 + (zeroC * 4));
-      fill(zero2, zero2 / 4, zero2 / 4);
+
+      if (mouseX >= 50 && mouseX <= 90 && mouseY <= 450 - (zeroNC * 4) && mouseY >= 450 - (zero2 * 4) - (zeroC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(zeroC, 50, 450 - zero2 * 4);
+      rect(50, 450, 40, (-zeroC * 4) - zeroNC * 4);
 
-      fill(one2, one2 / 4, one2 / 4);
-      rect(100, 450, 40, (-oneC * 4) - oneNC * 4);
-      fill(one2 / 4, one2 / 4, one2);
-      rect(100, 450, 40, -oneNC * 4);
-      fill(150, 150, 255);
-      text(oneNC, 100, 465 - one2 * 4 + (oneC * 4));
-      fill(one2, one2 / 4, one2 / 4);
+      if (mouseX >= 50 && mouseX <= 90 && mouseY <= 450 && mouseY >= 450 - (zero2 * 4) + (zeroC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(50, 450, 40, -zeroNC * 4);
+
+      if (mouseX >= 50 && mouseX <= 90 && mouseY <= 450 && mouseY >= 450 - (zero2 * 4) + (zeroC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(zeroNC, 50, 465 - zero2 * 4 + (zeroC * 4));
+
+      // if (mouseX >= 50 && mouseX <= 90 && mouseY <= 450 && mouseY >= 450 - zero2*4)
+      //   fill(250, 100, 100);
+      // else {
+      //   fill(150, 50, 50);
+      // }
+      // fill(zero2, zero2 / 4, zero2 / 4);
+      // rect(50, 450, 40, (-zeroC * 4) - zeroNC * 4);
+      // fill(zero2 / 4, zero2 / 4, zero2);
+      // rect(50, 450, 40, -zeroNC * 4);
+      // fill(150, 150, 255);
+      // text(zeroNC, 50, 465 - zero2 * 4 + (zeroC * 4));
+      // fill(zero2, zero2 / 4, zero2 / 4);
+      // text(zeroC, 50, 450 - zero2 * 4);
+
+      if (mouseX >= 100 && mouseX <= 140 && mouseY <= 450 - (oneNC * 4) && mouseY >= 450 - (one2 * 4) - (oneC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(oneC, 100, 450 - one2 * 4);
+      rect(100, 450, 40, (-oneC * 4) - oneNC * 4);
 
-      fill(two2, two2 / 4, two2 / 4);
-      rect(150, 450, 40, (-twoC * 4) - twoNC * 4);
-      fill(two2 / 4, two2 / 4, two2);
-      rect(150, 450, 40, -twoNC * 4);
-      fill(150, 150, 255);
-      text(twoNC, 150, 465 - two2 * 4 + (twoC * 4));
-      fill(two2, two2 / 4, two2 / 4);
+      if (mouseX >= 100 && mouseX <= 140 && mouseY <= 450 && mouseY >= 450 - (one2 * 4) + (oneC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(100, 450, 40, -oneNC * 4);
+
+      if (mouseX >= 100 && mouseX <= 140 && mouseY <= 450 && mouseY >= 450 - (one2 * 4) + (oneC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(oneNC, 100, 465 - one2 * 4 + (oneC * 4));
+
+      // fill(one2, one2 / 4, one2 / 4);
+      // rect(100, 450, 40, (-oneC * 4) - oneNC * 4);
+      // fill(one2 / 4, one2 / 4, one2);
+      // rect(100, 450, 40, -oneNC * 4);
+      // fill(150, 150, 255);
+      // text(oneNC, 100, 465 - one2 * 4 + (oneC * 4));
+      // fill(one2, one2 / 4, one2 / 4);
+      // text(oneC, 100, 450 - one2 * 4);
+
+      if (mouseX >= 150 && mouseX <= 190 && mouseY <= 450 - (twoNC * 4) && mouseY >= 450 - (two2 * 4) - (twoC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(twoC, 150, 450 - two2 * 4);
+      rect(150, 450, 40, (-twoC * 4) - twoNC * 4);
 
-      fill(three2, three2 / 4, three2 / 4);
-      rect(200, 450, 40, (-threeC * 4) - threeNC * 4);
-      fill(three2 / 4, three2 / 4, three2);
-      rect(200, 450, 40, -threeNC * 4);
-      fill(150, 150, 255);
-      text(threeNC, 200, 465 - three2 * 4 + (threeC * 4));
-      fill(three2, three2 / 4, three2 / 4);
+      if (mouseX >= 150 && mouseX <= 190 && mouseY <= 450 && mouseY >= 450 - (two2 * 4) + (twoC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(150, 450, 40, -twoNC * 4);
+
+      if (mouseX >= 150 && mouseX <= 190 && mouseY <= 450 && mouseY >= 450 - (two2 * 4) + (twoC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(twoNC, 150, 465 - two2 * 4 + (twoC * 4));
+
+      // fill(two2, two2 / 4, two2 / 4);
+      // rect(150, 450, 40, (-twoC * 4) - twoNC * 4);
+      // fill(two2 / 4, two2 / 4, two2);
+      // rect(150, 450, 40, -twoNC * 4);
+      // fill(150, 150, 255);
+      // text(twoNC, 150, 465 - two2 * 4 + (twoC * 4));
+      // fill(two2, two2 / 4, two2 / 4);
+      // text(twoC, 150, 450 - two2 * 4);
+
+      if (mouseX >= 200 && mouseX <= 240 && mouseY <= 450 - (threeNC * 4) && mouseY >= 450 - (three2 * 4) - (threeC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(threeC, 200, 450 - three2 * 4);
+      rect(200, 450, 40, (-threeC * 4) - threeNC * 4);
 
-      fill(four2, four2 / 4, four2 / 4);
-      rect(250, 450, 40, (-fourC * 4) - fourNC * 4);
-      fill(four2 / 4, four2 / 4, four2);
-      rect(250, 450, 40, -fourNC * 4);
-      fill(150, 150, 255);
-      text(fourNC, 250, 465 - four2 * 4 + (fourC * 4));
-      fill(four2, four2 / 4, four2 / 4);
+      if (mouseX >= 200 && mouseX <= 240 && mouseY <= 450 && mouseY >= 450 - (three2 * 4) + (threeC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(200, 450, 40, -threeNC * 4);
+
+      if (mouseX >= 200 && mouseX <= 240 && mouseY <= 450 && mouseY >= 450 - (three2 * 4) + (threeC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(threeNC, 200, 465 - three2 * 4 + (threeC * 4));
+
+      // fill(three2, three2 / 4, three2 / 4);
+      // rect(200, 450, 40, (-threeC * 4) - threeNC * 4);
+      // fill(three2 / 4, three2 / 4, three2);
+      // rect(200, 450, 40, -threeNC * 4);
+      // fill(150, 150, 255);
+      // text(threeNC, 200, 465 - three2 * 4 + (threeC * 4));
+      // fill(three2, three2 / 4, three2 / 4);
+      // text(threeC, 200, 450 - three2 * 4);
+
+      if (mouseX >= 250 && mouseX <= 290 && mouseY <= 450 - (fourNC * 4) && mouseY >= 450 - (four2 * 4) - (fourC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(fourC, 250, 450 - four2 * 4);
+      rect(250, 450, 40, (-fourC * 4) - fourNC * 4);
 
-      fill(five2, five2 / 4, five2 / 4);
-      rect(300, 450, 40, (-fiveC * 4) - fiveNC * 4);
-      fill(five2 / 4, five2 / 4, five2);
-      rect(300, 450, 40, -fiveNC * 4);
-      fill(150, 150, 255);
-      text(fiveNC, 300, 465 - five2 * 4 + (fiveC * 4));
-      fill(five2, five2 / 4, five2 / 4);
+      if (mouseX >= 250 && mouseX <= 290 && mouseY <= 450 && mouseY >= 450 - (four2 * 4) + (fourC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(250, 450, 40, -fourNC * 4);
+
+      if (mouseX >= 250 && mouseX <= 290 && mouseY <= 450 && mouseY >= 450 - (four2 * 4) + (fourC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(fourNC, 250, 465 - four2 * 4 + (fourC * 4));
+
+      // fill(four2, four2 / 4, four2 / 4);
+      // rect(250, 450, 40, (-fourC * 4) - fourNC * 4);
+      // fill(four2 / 4, four2 / 4, four2);
+      // rect(250, 450, 40, -fourNC * 4);
+      // fill(150, 150, 255);
+      // text(fourNC, 250, 465 - four2 * 4 + (fourC * 4));
+      // fill(four2, four2 / 4, four2 / 4);
+      // text(fourC, 250, 450 - four2 * 4);
+
+      if (mouseX >= 300 && mouseX <= 340 && mouseY <= 450 - (fiveNC * 4) && mouseY >= 450 - (five2 * 4) - (fiveC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(fiveC, 300, 450 - five2 * 4);
+      rect(300, 450, 40, (-fiveC * 4) - fiveNC * 4);
 
-      fill(six2, six2 / 4, six2 / 4);
-      rect(350, 450, 40, (-sixC * 4) - sixNC * 4);
-      fill(six2 / 4, six2 / 4, six2);
-      rect(350, 450, 40, -sixNC * 4);
-      fill(150, 150, 255);
-      text(sixNC, 350, 465 - six2 * 4 + (sixC * 4));
-      fill(six2, six2 / 4, six2 / 4);
+      if (mouseX >= 300 && mouseX <= 340 && mouseY <= 450 && mouseY >= 450 - (five2 * 4) + (fiveC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(300, 450, 40, -fiveNC * 4);
+
+      if (mouseX >= 300 && mouseX <= 340 && mouseY <= 450 && mouseY >= 450 - (five2 * 4) + (fiveC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(fiveNC, 300, 465 - five2 * 4 + (fiveC * 4));
+
+      // fill(five2, five2 / 4, five2 / 4);
+      // rect(300, 450, 40, (-fiveC * 4) - fiveNC * 4);
+      // fill(five2 / 4, five2 / 4, five2);
+      // rect(300, 450, 40, -fiveNC * 4);
+      // fill(150, 150, 255);
+      // text(fiveNC, 300, 465 - five2 * 4 + (fiveC * 4));
+      // fill(five2, five2 / 4, five2 / 4);
+      // text(fiveC, 300, 450 - five2 * 4);
+
+      if (mouseX >= 350 && mouseX <= 390 && mouseY <= 450 - (sixNC * 4) && mouseY >= 450 - (six2 * 4) - (sixC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(sixC, 350, 450 - six2 * 4);
+      rect(350, 450, 40, (-sixC * 4) - sixNC * 4);
 
-      fill(seven2, seven2 / 4, seven2 / 4);
-      rect(400, 450, 40, (-sevenC * 4) - sevenNC * 4);
-      fill(seven2 / 4, seven2 / 4, seven2);
-      rect(400, 450, 40, -sevenNC * 4);
-      fill(150, 150, 255);
-      text(sevenNC, 400, 465 - seven2 * 4 + (sevenC * 4));
-      fill(seven2, seven2 / 4, seven2 / 4);
+      if (mouseX >= 350 && mouseX <= 390 && mouseY <= 450 && mouseY >= 450 - (six2 * 4) + (sixC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(350, 450, 40, -sixNC * 4);
+
+      if (mouseX >= 350 && mouseX <= 390 && mouseY <= 450 && mouseY >= 450 - (six2 * 4) + (sixC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(sixNC, 350, 465 - six2 * 4 + (sixC * 4));
+
+      // fill(six2, six2 / 4, six2 / 4);
+      // rect(350, 450, 40, (-sixC * 4) - sixNC * 4);
+      // fill(six2 / 4, six2 / 4, six2);
+      // rect(350, 450, 40, -sixNC * 4);
+      // fill(150, 150, 255);
+      // text(sixNC, 350, 465 - six2 * 4 + (sixC * 4));
+      // fill(six2, six2 / 4, six2 / 4);
+      // text(sixC, 350, 450 - six2 * 4);
+
+      if (mouseX >= 400 && mouseX <= 440 && mouseY <= 450 - (sevenNC * 4) && mouseY >= 450 - (seven2 * 4) - (sevenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(sevenC, 400, 450 - seven2 * 4);
+      rect(400, 450, 40, (-sevenC * 4) - sevenNC * 4);
 
-      fill(eight2, eight2 / 4, eight2 / 4);
-      rect(450, 450, 40, (-eightC * 4) - eightNC * 4);
-      fill(eight2 / 4, eight2 / 4, eight2);
-      rect(450, 450, 40, -eightNC * 4);
-      fill(150, 150, 255);
-      text(eightNC, 450, 465 - eight2 * 4 + (eightC * 4));
-      fill(eight2, eight2 / 4, eight2 / 4);
+      if (mouseX >= 400 && mouseX <= 440 && mouseY <= 450 && mouseY >= 450 - (seven2 * 4) + (sevenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(400, 450, 40, -sevenNC * 4);
+
+      if (mouseX >= 400 && mouseX <= 440 && mouseY <= 450 && mouseY >= 450 - (seven2 * 4) + (sevenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(sevenNC, 400, 465 - seven2 * 4 + (sevenC * 4));
+
+      // fill(seven2, seven2 / 4, seven2 / 4);
+      // rect(400, 450, 40, (-sevenC * 4) - sevenNC * 4);
+      // fill(seven2 / 4, seven2 / 4, seven2);
+      // rect(400, 450, 40, -sevenNC * 4);
+      // fill(150, 150, 255);
+      // text(sevenNC, 400, 465 - seven2 * 4 + (sevenC * 4));
+      // fill(seven2, seven2 / 4, seven2 / 4);
+      // text(sevenC, 400, 450 - seven2 * 4);
+
+      if (mouseX >= 450 && mouseX <= 490 && mouseY <= 450 - (eightNC * 4) && mouseY >= 450 - (eight2 * 4) - (eightC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(eightC, 450, 450 - eight2 * 4);
+      rect(450, 450, 40, (-eightC * 4) - eightNC * 4);
 
-      fill(nine2, nine2 / 4, nine2 / 4);
-      rect(500, 450, 40, (-nineC * 4) - nineNC * 4);
-      fill(nine2 / 4, nine2 / 4, nine2);
-      rect(500, 450, 40, -nineNC * 4);
-      fill(150, 150, 255);
-      text(nineNC, 500, 465 - nine2 * 4 + (nineC * 4));
-      fill(nine2, nine2 / 4, nine2 / 4);
+      if (mouseX >= 450 && mouseX <= 490 && mouseY <= 450 && mouseY >= 450 - (eight2 * 4) + (eightC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(450, 450, 40, -eightNC * 4);
+
+      if (mouseX >= 450 && mouseX <= 490 && mouseY <= 450 && mouseY >= 450 - (eight2 * 4) + (eightC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(eightNC, 450, 465 - eight2 * 4 + (eightC * 4));
+
+      // fill(eight2, eight2 / 4, eight2 / 4);
+      // rect(450, 450, 40, (-eightC * 4) - eightNC * 4);
+      // fill(eight2 / 4, eight2 / 4, eight2);
+      // rect(450, 450, 40, -eightNC * 4);
+      // fill(150, 150, 255);
+      // text(eightNC, 450, 465 - eight2 * 4 + (eightC * 4));
+      // fill(eight2, eight2 / 4, eight2 / 4);
+      // text(eightC, 450, 450 - eight2 * 4);
+
+      if (mouseX >= 500 && mouseX <= 540 && mouseY <= 450 - (nineNC * 4) && mouseY >= 450 - (nine2 * 4) - (nineC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(nineC, 500, 450 - nine2 * 4);
+      rect(500, 450, 40, (-nineC * 4) - nineNC * 4);
 
-      fill(ten2, ten2 / 4, ten2 / 4);
-      rect(550, 450, 40, (-tenC * 4) - tenNC * 4);
-      fill(ten2 / 4, ten2 / 4, ten2);
-      rect(550, 450, 40, -tenNC * 4);
-      fill(150, 150, 255);
-      text(tenNC, 550, 465 - ten2 * 4 + (tenC * 4));
-      fill(ten2, ten2 / 4, ten2 / 4);
+      if (mouseX >= 500 && mouseX <= 540 && mouseY <= 450 && mouseY >= 450 - (nine2 * 4) + (nineC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(500, 450, 40, -nineNC * 4);
+
+      if (mouseX >= 500 && mouseX <= 540 && mouseY <= 450 && mouseY >= 450 - (nine2 * 4) + (nineC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(nineNC, 500, 465 - nine2 * 4 + (nineC * 4));
+
+      // fill(nine2, nine2 / 4, nine2 / 4);
+      // rect(500, 450, 40, (-nineC * 4) - nineNC * 4);
+      // fill(nine2 / 4, nine2 / 4, nine2);
+      // rect(500, 450, 40, -nineNC * 4);
+      // fill(150, 150, 255);
+      // text(nineNC, 500, 465 - nine2 * 4 + (nineC * 4));
+      // fill(nine2, nine2 / 4, nine2 / 4);
+      // text(nineC, 500, 450 - nine2 * 4);
+
+      if (mouseX >= 550 && mouseX <= 590 && mouseY <= 450 - (tenNC * 4) && mouseY >= 450 - (ten2 * 4) - (tenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(tenC, 550, 450 - ten2 * 4);
+      rect(550, 450, 40, (-tenC * 4) - tenNC * 4);
 
-      fill(eleven2, eleven2 / 4, eleven2 / 4);
-      rect(600, 450, 40, (-elevenC * 4) - elevenNC * 4);
-      fill(eleven2 / 4, eleven2 / 4, eleven2);
-      rect(600, 450, 40, -elevenNC * 4);
-      fill(150, 150, 255);
-      text(elevenNC, 600, 465 - eleven2 * 4 + (elevenC * 4));
-      fill(eleven2, eleven2 / 4, eleven2 / 4);
+      if (mouseX >= 550 && mouseX <= 590 && mouseY <= 450 && mouseY >= 450 - (ten2 * 4) + (tenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(550, 450, 40, -tenNC * 4);
+
+      if (mouseX >= 550 && mouseX <= 590 && mouseY <= 450 && mouseY >= 450 - (ten2 * 4) + (tenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(tenNC, 550, 465 - ten2 * 4 + (tenC * 4));
+
+      // fill(ten2, ten2 / 4, ten2 / 4);
+      // rect(550, 450, 40, (-tenC * 4) - tenNC * 4);
+      // fill(ten2 / 4, ten2 / 4, ten2);
+      // rect(550, 450, 40, -tenNC * 4);
+      // fill(150, 150, 255);
+      // text(tenNC, 550, 465 - ten2 * 4 + (tenC * 4));
+      // fill(ten2, ten2 / 4, ten2 / 4);
+      // text(tenC, 550, 450 - ten2 * 4);
+
+      if (mouseX >= 600 && mouseX <= 640 && mouseY <= 450 - (elevenNC * 4) && mouseY >= 450 - (eleven2 * 4) - (elevenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(elevenC, 600, 450 - eleven2 * 4);
+      rect(600, 450, 40, (-elevenC * 4) - elevenNC * 4);
 
-      fill(twelve2, twelve2 / 4, twelve2 / 4);
-      rect(650, 450, 40, (-twelveC * 4) - twelveNC * 4);
-      fill(twelve2 / 4, twelve2 / 4, twelve2);
-      rect(650, 450, 40, -twelveNC * 4);
-      fill(150, 150, 255);
-      text(twelveNC, 650, 465 - twelve2 * 4 + (twelveC * 4));
-      fill(twelve2, twelve2 / 4, twelve2 / 4);
+      if (mouseX >= 600 && mouseX <= 640 && mouseY <= 450 && mouseY >= 450 - (eleven2 * 4) + (elevenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(600, 450, 40, -elevenNC * 4);
+
+      if (mouseX >= 600 && mouseX <= 640 && mouseY <= 450 && mouseY >= 450 - (eleven2 * 4) + (elevenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(elevenNC, 600, 465 - eleven2 * 4 + (elevenC * 4));
+
+      // fill(eleven2, eleven2 / 4, eleven2 / 4);
+      // rect(600, 450, 40, (-elevenC * 4) - elevenNC * 4);
+      // fill(eleven2 / 4, eleven2 / 4, eleven2);
+      // rect(600, 450, 40, -elevenNC * 4);
+      // fill(150, 150, 255);
+      // text(elevenNC, 600, 465 - eleven2 * 4 + (elevenC * 4));
+      // fill(eleven2, eleven2 / 4, eleven2 / 4);
+      // text(elevenC, 600, 450 - eleven2 * 4);
+
+      if (mouseX >= 650 && mouseX <= 690 && mouseY <= 450 - (twelveNC * 4) && mouseY >= 450 - (twelve2 * 4) - (twelveC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(twelveC, 650, 450 - twelve2 * 4);
+      rect(650, 450, 40, (-twelveC * 4) - twelveNC * 4);
 
-      fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
-      rect(700, 450, 40, (-thirteenC * 4) - thirteenNC * 4);
-      fill(thirteen2 / 4, thirteen2 / 4, thirteen2);
-      rect(700, 450, 40, -thirteenNC * 4);
-      fill(150, 150, 255);
-      text(thirteenNC, 700, 465 - thirteen2 * 4 + (thirteenC * 4));
-      fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
+      if (mouseX >= 650 && mouseX <= 690 && mouseY <= 450 && mouseY >= 450 - (twelve2 * 4) + (twelveC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(650, 450, 40, -twelveNC * 4);
+
+      if (mouseX >= 650 && mouseX <= 690 && mouseY <= 450 && mouseY >= 450 - (twelve2 * 4) + (twelveC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(twelveNC, 650, 465 - twelve2 * 4 + (twelveC * 4));
+      //
+      // fill(twelve2, twelve2 / 4, twelve2 / 4);
+      // rect(650, 450, 40, (-twelveC * 4) - twelveNC * 4);
+      // fill(twelve2 / 4, twelve2 / 4, twelve2);
+      // rect(650, 450, 40, -twelveNC * 4);
+      // fill(150, 150, 255);
+      // text(twelveNC, 650, 465 - twelve2 * 4 + (twelveC * 4));
+      // fill(twelve2, twelve2 / 4, twelve2 / 4);
+      // text(twelveC, 650, 450 - twelve2 * 4);
+      //
+
+      if (mouseX >= 700 && mouseX <= 740 && mouseY <= 450 - (thirteenNC * 4) && mouseY >= 450 - (thirteen2 * 4) - (thirteenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(thirteenC, 700, 450 - thirteen2 * 4);
+      rect(700, 450, 40, (-thirteenC * 4) - thirteenNC * 4);
 
-      fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
-      rect(750, 450, 40, (-fourteenC * 4) - fourteenNC * 4);
-      fill(fourteen2 / 4, fourteen2 / 4, fourteen2);
-      rect(750, 450, 40, -fourteenNC * 4);
-      fill(150, 150, 255);
-      text(fourteenNC, 750, 465 - fourteen2 * 4 + (fourteenC * 4));
-      fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
+      if (mouseX >= 700 && mouseX <= 740 && mouseY <= 450 && mouseY >= 450 - (thirteen2 * 4) + (thirteenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(700, 450, 40, -thirteenNC * 4);
+
+      if (mouseX >= 700 && mouseX <= 740 && mouseY <= 450 && mouseY >= 450 - (thirteen2 * 4) + (thirteenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(thirteenNC, 700, 465 - thirteen2 * 4 + (thirteenC * 4));
+      // fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
+      // rect(700, 450, 40, (-thirteenC * 4) - thirteenNC * 4);
+      // fill(thirteen2 / 4, thirteen2 / 4, thirteen2);
+      // rect(700, 450, 40, -thirteenNC * 4);
+      // fill(150, 150, 255);
+      // text(thirteenNC, 700, 465 - thirteen2 * 4 + (thirteenC * 4));
+      // fill(thirteen2, thirteen2 / 4, thirteen2 / 4);
+      // text(thirteenC, 700, 450 - thirteen2 * 4);
+      //
+      if (mouseX >= 750 && mouseX <= 790 && mouseY <= 450 - (fourteenNC * 4) && mouseY >= 450 - (fourteen2 * 4) - (fourteenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(fourteenC, 750, 450 - fourteen2 * 4);
+      rect(750, 450, 40, (-fourteenC * 4) - fourteenNC * 4);
 
-      fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
-      rect(800, 450, 40, (-fifteenC * 4) - fifteenNC * 4);
-      fill(fifteen2 / 4, fifteen2 / 4, fifteen2);
-      rect(800, 450, 40, -fifteenNC * 4);
-      fill(150, 150, 255);
-      text(fifteenNC, 800, 465 - fifteen2 * 4 + (fifteenC * 4));
-      fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
+      if (mouseX >= 750 && mouseX <= 790 && mouseY <= 450 && mouseY >= 450 - (fourteen2 * 4) + (fourteenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(750, 450, 40, -fourteenNC * 4);
+
+      if (mouseX >= 750 && mouseX <= 790 && mouseY <= 450 && mouseY >= 450 - (fourteen2 * 4) + (fourteenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(fourteenNC, 750, 465 - fourteen2 * 4 + (fourteenC * 4));
+      // fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
+      // rect(750, 450, 40, (-fourteenC * 4) - fourteenNC * 4);
+      // fill(fourteen2 / 4, fourteen2 / 4, fourteen2);
+      // rect(750, 450, 40, -fourteenNC * 4);
+      // fill(150, 150, 255);
+      // text(fourteenNC, 750, 465 - fourteen2 * 4 + (fourteenC * 4));
+      // fill(fourteen2, fourteen2 / 4, fourteen2 / 4);
+      // text(fourteenC, 750, 450 - fourteen2 * 4);
+      //
+      if (mouseX >= 800 && mouseX <= 840 && mouseY <= 450 - (fifteenNC * 4) && mouseY >= 450 - (fifteen2 * 4) - (fifteenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(fifteenC, 800, 450 - fifteen2 * 4);
+      rect(800, 450, 40, (-fifteenC * 4) - fifteenNC * 4);
 
-      fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
-      rect(850, 450, 40, (-sixteenC * 4) - sixteenNC * 4);
-      fill(sixteen2 / 4, sixteen2 / 4, sixteen2);
-      rect(850, 450, 40, -sixteenNC * 4);
-      fill(150, 150, 255);
-      text(sixteenNC, 850, 465 - sixteen2 * 4 + (sixteenC * 4));
-      fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
+      if (mouseX >= 800 && mouseX <= 840 && mouseY <= 450 && mouseY >= 450 - (fifteen2 * 4) + (fifteenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(800, 450, 40, -fifteenNC * 4);
+
+      if (mouseX >= 800 && mouseX <= 840 && mouseY <= 450 && mouseY >= 450 - (fifteen2 * 4) + (fifteenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(fifteenNC, 800, 465 - fifteen2 * 4 + (fifteenC * 4));
+      // fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
+      // rect(800, 450, 40, (-fifteenC * 4) - fifteenNC * 4);
+      // fill(fifteen2 / 4, fifteen2 / 4, fifteen2);
+      // rect(800, 450, 40, -fifteenNC * 4);
+      // fill(150, 150, 255);
+      // text(fifteenNC, 800, 465 - fifteen2 * 4 + (fifteenC * 4));
+      // fill(fifteen2, fifteen2 / 4, fifteen2 / 4);
+      // text(fifteenC, 800, 450 - fifteen2 * 4);
+      if (mouseX >= 850 && mouseX <= 890 && mouseY <= 450 - (sixteenNC * 4) && mouseY >= 450 - (sixteen2 * 4) - (sixteenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(sixteenC, 850, 450 - sixteen2 * 4);
+      rect(850, 450, 40, (-sixteenC * 4) - sixteenNC * 4);
 
-      fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
-      rect(900, 450, 40, (-seventeenC * 4) - seventeenNC * 4);
-      fill(seventeen2 / 4, seventeen2 / 4, seventeen2);
-      rect(900, 450, 40, -seventeenNC * 4);
-      fill(150, 150, 255);
-      text(seventeenNC, 900, 465 - seventeen2 * 4 + (seventeenC * 4));
-      fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
+      if (mouseX >= 850 && mouseX <= 890 && mouseY <= 450 && mouseY >= 450 - (sixteen2 * 4) + (sixteenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(850, 450, 40, -sixteenNC * 4);
+
+      if (mouseX >= 850 && mouseX <= 890 && mouseY <= 450 && mouseY >= 450 - (sixteen2 * 4) + (sixteenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(sixteenNC, 850, 465 - sixteen2 * 4 + (sixteenC * 4));
+      //
+      // fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
+      // rect(850, 450, 40, (-sixteenC * 4) - sixteenNC * 4);
+      // fill(sixteen2 / 4, sixteen2 / 4, sixteen2);
+      // rect(850, 450, 40, -sixteenNC * 4);
+      // fill(150, 150, 255);
+      // text(sixteenNC, 850, 465 - sixteen2 * 4 + (sixteenC * 4));
+      // fill(sixteen2, sixteen2 / 4, sixteen2 / 4);
+      // text(sixteenC, 850, 450 - sixteen2 * 4);
+      if (mouseX >= 900 && mouseX <= 940 && mouseY <= 450 - (seventeenNC * 4) && mouseY >= 450 - (seventeen2 * 4) - (seventeenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(seventeenC, 900, 450 - seventeen2 * 4);
+      rect(900, 450, 40, (-seventeenC * 4) - seventeenNC * 4);
 
-      fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
-      rect(950, 450, 40, (-eighteenC * 4) - eighteenNC * 4);
-      fill(eighteen2 / 4, eighteen2 / 4, eighteen2);
-      rect(950, 450, 40, -eighteenNC * 4);
-      fill(150, 150, 255);
-      text(eighteenNC, 950, 465 - eighteen2 * 4 + (eighteenC * 4));
-      fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
+      if (mouseX >= 900 && mouseX <= 940 && mouseY <= 450 && mouseY >= 450 - (seventeen2 * 4) + (seventeenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(900, 450, 40, -seventeenNC * 4);
+
+      if (mouseX >= 900 && mouseX <= 940 && mouseY <= 450 && mouseY >= 450 - (seventeen2 * 4) + (seventeenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(seventeenNC, 900, 465 - seventeen2 * 4 + (seventeenC * 4));
+      //
+      // fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
+      // rect(900, 450, 40, (-seventeenC * 4) - seventeenNC * 4);
+      // fill(seventeen2 / 4, seventeen2 / 4, seventeen2);
+      // rect(900, 450, 40, -seventeenNC * 4);
+      // fill(150, 150, 255);
+      // text(seventeenNC, 900, 465 - seventeen2 * 4 + (seventeenC * 4));
+      // fill(seventeen2, seventeen2 / 4, seventeen2 / 4);
+      // text(seventeenC, 900, 450 - seventeen2 * 4);
+
+      if (mouseX >= 950 && mouseX <= 990 && mouseY <= 450 - (eighteenNC * 4) && mouseY >= 450 - (eighteen2 * 4) - (eighteenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(eighteenC, 950, 450 - eighteen2 * 4);
+      rect(950, 450, 40, (-eighteenC * 4) - eighteenNC * 4);
 
-      fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
-      rect(1000, 450, 40, (-nineteenC * 4) - nineteenNC * 4);
-      fill(nineteen2 / 4, nineteen2 / 4, nineteen2);
-      rect(1000, 450, 40, -nineteenNC * 4);
-      fill(150, 150, 255);
-      text(nineteenNC, 1000, 465 - nineteen2 * 4 + (nineteenC * 4));
-      fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
+      if (mouseX >= 950 && mouseX <= 990 && mouseY <= 450 && mouseY >= 450 - (eighteen2 * 4) + (eighteenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(950, 450, 40, -eighteenNC * 4);
+
+      if (mouseX >= 950 && mouseX <= 990 && mouseY <= 450 && mouseY >= 450 - (eighteen2 * 4) + (eighteenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(eighteenNC, 950, 465 - eighteen2 * 4 + (eighteenC * 4));
+
+      // fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
+      // rect(950, 450, 40, (-eighteenC * 4) - eighteenNC * 4);
+      // fill(eighteen2 / 4, eighteen2 / 4, eighteen2);
+      // rect(950, 450, 40, -eighteenNC * 4);
+      // fill(150, 150, 255);
+      // text(eighteenNC, 950, 465 - eighteen2 * 4 + (eighteenC * 4));
+      // fill(eighteen2, eighteen2 / 4, eighteen2 / 4);
+      // text(eighteenC, 950, 450 - eighteen2 * 4);
+      //
+      if (mouseX >= 1000 && mouseX <= 1040 && mouseY <= 450 - (nineteenNC * 4) && mouseY >= 450 - (nineteen2 * 4) - (nineteenC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(nineteenC, 1000, 450 - nineteen2 * 4);
+      rect(1000, 450, 40, (-nineteenC * 4) - nineteenNC * 4);
 
-      fill(twenty2, twenty2 / 4, twenty2 / 4);
-      rect(1050, 450, 40, (-twentyC * 4) - twentyNC * 4);
-      fill(twenty2 / 4, twenty2 / 4, twenty2);
-      rect(1050, 450, 40, -twentyNC * 4);
-      fill(150, 150, 255);
-      text(twentyNC, 1050, 465 - twenty2 * 4 + (twentyC * 4));
-      fill(twenty2, twenty2 / 4, twenty2 / 4);
+      if (mouseX >= 1000 && mouseX <= 1040 && mouseY <= 450 && mouseY >= 450 - (nineteen2 * 4) + (nineteenC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(1000, 450, 40, -nineteenNC * 4);
+
+      if (mouseX >= 1000 && mouseX <= 1040 && mouseY <= 450 && mouseY >= 450 - (nineteen2 * 4) + (nineteenC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(nineteenNC, 1000, 465 - nineteen2 * 4 + (nineteenC * 4));
+      // fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
+      // rect(1000, 450, 40, (-nineteenC * 4) - nineteenNC * 4);
+      // fill(nineteen2 / 4, nineteen2 / 4, nineteen2);
+      // rect(1000, 450, 40, -nineteenNC * 4);
+      // fill(150, 150, 255);
+      // text(nineteenNC, 1000, 465 - nineteen2 * 4 + (nineteenC * 4));
+      // fill(nineteen2, nineteen2 / 4, nineteen2 / 4);
+      // text(nineteenC, 1000, 450 - nineteen2 * 4);
+
+      if (mouseX >= 1050 && mouseX <= 1090 && mouseY <= 450 - (twentyNC * 4) && mouseY >= 450 - (twenty2 * 4) - (twentyC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(twentyC, 1050, 450 - twenty2 * 4);
+      rect(1050, 450, 40, (-twentyC * 4) - twentyNC * 4);
 
-      fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
-      rect(1100, 450, 40, (-twentyoneC * 4) - twentyoneNC * 4);
-      fill(twentyone2 / 4, twentyone2 / 4, twentyone2);
-      rect(1100, 450, 40, -twentyoneNC * 4);
-      fill(150, 150, 255);
-      text(twentyoneNC, 1100, 465 - twentyone2 * 4 + (twentyoneC * 4));
-      fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
+      if (mouseX >= 1050 && mouseX <= 1090 && mouseY <= 450 && mouseY >= 450 - (twenty2 * 4) + (twentyC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(1050, 450, 40, -twentyNC * 4);
+
+      if (mouseX >= 1050 && mouseX <= 1090 && mouseY <= 450 && mouseY >= 450 - (twenty2 * 4) + (twentyC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(twentyNC, 1050, 465 - twenty2 * 4 + (twentyC * 4));
+      //
+      // fill(twenty2, twenty2 / 4, twenty2 / 4);
+      // rect(1050, 450, 40, (-twentyC * 4) - twentyNC * 4);
+      // fill(twenty2 / 4, twenty2 / 4, twenty2);
+      // rect(1050, 450, 40, -twentyNC * 4);
+      // fill(150, 150, 255);
+      // text(twentyNC, 1050, 465 - twenty2 * 4 + (twentyC * 4));
+      // fill(twenty2, twenty2 / 4, twenty2 / 4);
+      // text(twentyC, 1050, 450 - twenty2 * 4);
+      if (mouseX >= 1100 && mouseX <= 1140 && mouseY <= 450 - (twentyoneNC * 4) && mouseY >= 450 - (twentyone2 * 4) - (twentyoneC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(twentyoneC, 1100, 450 - twentyone2 * 4);
+      rect(1100, 450, 40, (-twentyoneC * 4) - twentyoneNC * 4);
 
-      fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
-      rect(1150, 450, 40, (-twentytwoC * 4) - twentytwoNC * 4);
-      fill(twentytwo2 / 4, twentytwo2 / 4, twentytwo2);
-      rect(1150, 450, 40, -twentytwoNC * 4);
-      fill(150, 150, 255);
-      text(twentytwoNC, 1150, 465 - twentytwo2 * 4 + (twentytwoC * 4));
-      fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
+      if (mouseX >= 1100 && mouseX <= 1140 && mouseY <= 450 && mouseY >= 450 - (twentyone2 * 4) + (twentyoneC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(1100, 450, 40, -twentyoneNC * 4);
+
+      if (mouseX >= 1100 && mouseX <= 1140 && mouseY <= 450 && mouseY >= 450 - (twentyone2 * 4) + (twentyoneC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(twentyoneNC, 1100, 465 - twentyone2 * 4 + (twentyoneC * 4));
+      //
+      // fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
+      // rect(1100, 450, 40, (-twentyoneC * 4) - twentyoneNC * 4);
+      // fill(twentyone2 / 4, twentyone2 / 4, twentyone2);
+      // rect(1100, 450, 40, -twentyoneNC * 4);
+      // fill(150, 150, 255);
+      // text(twentyoneNC, 1100, 465 - twentyone2 * 4 + (twentyoneC * 4));
+      // fill(twentyone2, twentyone2 / 4, twentyone2 / 4);
+      // text(twentyoneC, 1100, 450 - twentyone2 * 4);
+      if (mouseX >= 1150 && mouseX <= 1190 && mouseY <= 450 - (twentytwoNC * 4) && mouseY >= 450 - (twentytwo2 * 4) - (twentytwoC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(twentytwoC, 1150, 450 - twentytwo2 * 4);
+      rect(1150, 450, 40, (-twentytwoC * 4) - twentytwoNC * 4);
 
-      fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
-      rect(1200, 450, 40, (-twentythreeC * 4) - twentythreeNC * 4);
-      fill(twentythree2 / 4, twentythree2 / 4, twentythree2);
-      rect(1200, 450, 40, -twentythreeNC * 4);
-      fill(150, 150, 255);
-      text(twentythreeNC, 1200, 465 - twentythree2 * 4 + (twentythreeC * 4));
-      fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
+      if (mouseX >= 1150 && mouseX <= 1190 && mouseY <= 450 && mouseY >= 450 - (twentytwo2 * 4) + (twentytwoC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(1150, 450, 40, -twentytwoNC * 4);
+
+      if (mouseX >= 1150 && mouseX <= 1190 && mouseY <= 450 && mouseY >= 450 - (twentytwo2 * 4) + (twentytwoC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(twentytwoNC, 1150, 465 - twentytwo2 * 4 + (twentytwoC * 4));
+      //
+      // fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
+      // rect(1150, 450, 40, (-twentytwoC * 4) - twentytwoNC * 4);
+      // fill(twentytwo2 / 4, twentytwo2 / 4, twentytwo2);
+      // rect(1150, 450, 40, -twentytwoNC * 4);
+      // fill(150, 150, 255);
+      // text(twentytwoNC, 1150, 465 - twentytwo2 * 4 + (twentytwoC * 4));
+      // fill(twentytwo2, twentytwo2 / 4, twentytwo2 / 4);
+      // text(twentytwoC, 1150, 450 - twentytwo2 * 4);
+      if (mouseX >= 1200 && mouseX <= 1240 && mouseY <= 450 - (twentythreeNC * 4) && mouseY >= 450 - (twentythree2 * 4) - (twentythreeC * 4))
+
+        fill(250, 100, 100);
+      else {
+        fill(150, 50, 50);
+      }
       text(twentythreeC, 1200, 450 - twentythree2 * 4);
+      rect(1200, 450, 40, (-twentythreeC * 4) - twentythreeNC * 4);
+
+      if (mouseX >= 1200 && mouseX <= 1240 && mouseY <= 450 && mouseY >= 450 - (twentythree2 * 4) + (twentythreeC * 4))
+        fill(100, 100, 250);
+      else {
+        fill(50, 50, 150);
+      }
+      rect(1200, 450, 40, -twentythreeNC * 4);
+
+      if (mouseX >= 1200 && mouseX <= 1240 && mouseY <= 450 && mouseY >= 450 - (twentythree2 * 4) + (twentythreeC * 4))
+        fill(250, 250, 250);
+      else {
+        fill(150, 150, 250);
+      }
+      text(twentythreeNC, 1200, 465 - twentythree2 * 4 + (twentythreeC * 4));
+      //
+      // fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
+      // rect(1200, 450, 40, (-twentythreeC * 4) - twentythreeNC * 4);
+      // fill(twentythree2 / 4, twentythree2 / 4, twentythree2);
+      // rect(1200, 450, 40, -twentythreeNC * 4);
+      // fill(150, 150, 255);
+      // text(twentythreeNC, 1200, 465 - twentythree2 * 4 + (twentythreeC * 4));
+      // fill(twentythree2, twentythree2 / 4, twentythree2 / 4);
+      // text(twentythreeC, 1200, 450 - twentythree2 * 4);
 
       fill(0);
       ellipse(70, 450, 40, 40);
@@ -1891,6 +2736,392 @@ function draw() {
       fill(0);
       text("Total", 70, 540);
       text("Violent/Non-Violent", 910, 535);
+      if (mouseX >= 50 && mouseX <= 90 && mouseY <= 450 - (zeroNC * 4) && mouseY >= 450 - (zero2 * 4) - (zeroC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(zeroC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 50 && mouseX <= 90 && mouseY <= 450 && mouseY >= 450 - (zero2 * 4) + (zeroC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(zeroNC, mouseX + 85, mouseY + 60);
+
+      }
+      if (mouseX >= 100 && mouseX <= 140 && mouseY <= 450 - (oneNC * 4) && mouseY >= 450 - (one2 * 4) - (oneC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(oneC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 100 && mouseX <= 140 && mouseY <= 450 && mouseY >= 450 - (one2 * 4) + (oneC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(oneNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 150 && mouseX <= 190 && mouseY <= 450 - (twoNC * 4) && mouseY >= 450 - (two2 * 4) - (twoC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twoC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 150 && mouseX <= 190 && mouseY <= 450 && mouseY >= 450 - (two2 * 4) + (twoC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twoNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 200 && mouseX <= 240 && mouseY <= 450 - (threeNC * 4) && mouseY >= 450 - (three2 * 4) - (threeC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(threeC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 200 && mouseX <= 240 && mouseY <= 450 && mouseY >= 450 - (three2 * 4) + (threeC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(threeNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 250 && mouseX <= 290 && mouseY <= 450 - (fourNC * 4) && mouseY >= 450 - (four2 * 4) - (fourC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fourC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 250 && mouseX <= 290 && mouseY <= 450 && mouseY >= 450 - (four2 * 4) + (fourC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fourNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 300 && mouseX <= 340 && mouseY <= 450 - (fiveNC * 4) && mouseY >= 450 - (five2 * 4) - (fiveC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fiveC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 300 && mouseX <= 340 && mouseY <= 450 && mouseY >= 450 - (five2 * 4) + (fiveC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fiveNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 350 && mouseX <= 390 && mouseY <= 450 - (sixNC * 4) && mouseY >= 450 - (six2 * 4) - (sixC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(sixC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 350 && mouseX <= 390 && mouseY <= 450 && mouseY >= 450 - (six2 * 4) + (sixC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(sixNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 400 && mouseX <= 440 && mouseY <= 450 - (sevenNC * 4) && mouseY >= 450 - (seven2 * 4) - (sevenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(sevenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 400 && mouseX <= 440 && mouseY <= 450 && mouseY >= 450 - (seven2 * 4) + (sevenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(sevenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 450 && mouseX <= 490 && mouseY <= 450 - (eightNC * 4) && mouseY >= 450 - (eight2 * 4) - (eightC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(eightC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 450 && mouseX <= 490 && mouseY <= 450 && mouseY >= 450 - (eight2 * 4) + (eightC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(eightNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 500 && mouseX <= 540 && mouseY <= 450 - (nineNC * 4) && mouseY >= 450 - (nine2 * 4) - (nineC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(nineC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 500 && mouseX <= 540 && mouseY <= 450 && mouseY >= 450 - (nine2 * 4) + (nineC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(nineNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 550 && mouseX <= 590 && mouseY <= 450 - (tenNC * 4) && mouseY >= 450 - (ten2 * 4) - (tenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(tenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 550 && mouseX <= 590 && mouseY <= 450 && mouseY >= 450 - (ten2 * 4) + (tenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(tenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 600 && mouseX <= 640 && mouseY <= 450 - (elevenNC * 4) && mouseY >= 450 - (eleven2 * 4) - (elevenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(elevenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 600 && mouseX <= 640 && mouseY <= 450 && mouseY >= 450 - (eleven2 * 4) + (elevenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(elevenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 650 && mouseX <= 690 && mouseY <= 450 - (twelveNC * 4) && mouseY >= 450 - (twelve2 * 4) - (twelveC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twelveC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 650 && mouseX <= 690 && mouseY <= 450 && mouseY >= 450 - (twelve2 * 4) + (twelveC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twelveNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 700 && mouseX <= 740 && mouseY <= 450 - (thirteenNC * 4) && mouseY >= 450 - (thirteen2 * 4) - (thirteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(thirteenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 700 && mouseX <= 740 && mouseY <= 450 && mouseY >= 450 - (thirteen2 * 4) + (thirteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(thirteenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 750 && mouseX <= 790 && mouseY <= 450 - (fourteenNC * 4) && mouseY >= 450 - (fourteen2 * 4) - (fourteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fourteenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 750 && mouseX <= 790 && mouseY <= 450 && mouseY >= 450 - (fourteen2 * 4) + (fourteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fourteenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 800 && mouseX <= 840 && mouseY <= 450 - (fifteenNC * 4) && mouseY >= 450 - (fifteen2 * 4) - (fifteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fifteenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 800 && mouseX <= 840 && mouseY <= 450 && mouseY >= 450 - (fifteen2 * 4) + (fifteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(fifteenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 850 && mouseX <= 890 && mouseY <= 450 - (sixteenNC * 4) && mouseY >= 450 - (sixteen2 * 4) - (sixteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(sixteenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 850 && mouseX <= 890 && mouseY <= 450 && mouseY >= 450 - (sixteen2 * 4) + (sixteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(sixteenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 900 && mouseX <= 940 && mouseY <= 450 - (seventeenNC * 4) && mouseY >= 450 - (seventeen2 * 4) - (seventeenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(seventeenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 900 && mouseX <= 940 && mouseY <= 450 && mouseY >= 450 - (seventeen2 * 4) + (seventeenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(seventeenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 950 && mouseX <= 990 && mouseY <= 450 - (eighteenNC * 4) && mouseY >= 450 - (eighteen2 * 4) - (eighteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(eighteenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 950 && mouseX <= 990 && mouseY <= 450 && mouseY >= 450 - (eighteen2 * 4) + (eighteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(eighteenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1000 && mouseX <= 1040 && mouseY <= 450 - (nineteenNC * 4) && mouseY >= 450 - (nineteen2 * 4) - (nineteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(nineteenC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1000 && mouseX <= 1040 && mouseY <= 450 && mouseY >= 450 - (nineteen2 * 4) + (nineteenC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(nineteenNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1050 && mouseX <= 1090 && mouseY <= 450 - (twentyNC * 4) && mouseY >= 450 - (twenty2 * 4) - (twentyC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twentyC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1050 && mouseX <= 1090 && mouseY <= 450 && mouseY >= 450 - (twenty2 * 4) + (twentyC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twentyNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1100 && mouseX <= 1140 && mouseY <= 450 - (twentyoneNC * 4) && mouseY >= 450 - (twentyone2 * 4) - (twentyoneC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twentyoneC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1100 && mouseX <= 1140 && mouseY <= 450 && mouseY >= 450 - (twentyone2 * 4) + (twentyoneC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twentyoneNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1150 && mouseX <= 1190 && mouseY <= 450 - (twentytwoNC * 4) && mouseY >= 450 - (twentytwo2 * 4) - (twentytwoC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 230, 75);
+        fill(255);
+        text("Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twentytwoC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1150 && mouseX <= 1190 && mouseY <= 450 && mouseY >= 450 - (twentytwo2 * 4) + (twentytwoC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twentytwoNC, mouseX + 85, mouseY + 60);
+      }
+      if (mouseX >= 1200 && mouseX <= 1240 && mouseY <= 450 - (twentythreeNC * 4) && mouseY >= 450 - (twentythree2 * 4) - (twentythreeC * 4)) {
+      textSize(24);
+      fill(0);
+      rect(mouseX, mouseY, 230, 75);
+      fill(255);
+      text("Violent incidents:", mouseX + 15, mouseY + 30);
+      text(twentythreeC, mouseX + 85, mouseY + 60);}
+      if (mouseX >= 1200 && mouseX <= 1240 && mouseY <= 450 && mouseY >= 450 - (twentythree2 * 4) + (twentythreeC * 4)) {
+        textSize(24);
+        fill(0);
+        rect(mouseX, mouseY, 280, 75);
+        fill(255);
+        text("Non-Violent incidents:", mouseX + 15, mouseY + 30);
+        text(twentythreeNC, mouseX + 85, mouseY + 60);
+      }
+
+
       if (mouseIsPressed && mouseX >= 50 && mouseX <= 250 && mouseY >= 500 && mouseY <= 550) {
         pg2CNC = false;
         pg2 = true;
